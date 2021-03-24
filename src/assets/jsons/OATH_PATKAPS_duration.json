@@ -1,0 +1,2313 @@
+[{
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 635848.75,
+    "y": 218180.75,
+    "z": 150208
+  },
+  "duration": 5871.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 626892.875,
+    "y": 204081.921875,
+    "z": 124411.8828125
+  },
+  "duration": 9994.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 597868.5,
+    "y": 169208.4375,
+    "z": 78169.828125
+  },
+  "duration": 10000.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 573619.625,
+    "y": 141239.671875,
+    "z": 41868.48828125
+  },
+  "duration": 10004.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 562115.5625,
+    "y": 140316.734375,
+    "z": 28293.599609375
+  },
+  "duration": 1870.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 559927.75,
+    "y": 141705.34375,
+    "z": 25615.759765625
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 559994.6875,
+    "y": 141662.109375,
+    "z": 25675.73046875
+  },
+  "duration": 1930.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 559224.1875,
+    "y": 142245.1875,
+    "z": 25655.576171875
+  },
+  "duration": 140.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 559224.1875,
+    "y": 142245.1875,
+    "z": 25655.576171875
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 559172.5625,
+    "y": 142211.375,
+    "z": 25666.4375
+  },
+  "duration": 6065.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557590.75,
+    "y": 139240.71875,
+    "z": 25723.12109375
+  },
+  "duration": 2309.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556405.875,
+    "y": 136430.78125,
+    "z": 25726.935546875
+  },
+  "duration": 1744.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556036.5,
+    "y": 135767.390625,
+    "z": 25651.5703125
+  },
+  "duration": 261.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556036,
+    "y": 135767.28125,
+    "z": 25651.5703125
+  },
+  "duration": 218.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556036.875,
+    "y": 135766.921875,
+    "z": 25651.5703125
+  },
+  "duration": 285.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556034.75,
+    "y": 135767.78125,
+    "z": 25651.5703125
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556034.75,
+    "y": 135767.78125,
+    "z": 25651.5703125
+  },
+  "duration": 351.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556018.375,
+    "y": 135770.25,
+    "z": 25651.5703125
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556018.375,
+    "y": 135770.25,
+    "z": 25651.5703125
+  },
+  "duration": 1724.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555342.3125,
+    "y": 135610.359375,
+    "z": 25651.5703125
+  },
+  "duration": 1153.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555238.1875,
+    "y": 135232.5625,
+    "z": 25651.5703125
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555238.1875,
+    "y": 135232.5625,
+    "z": 25651.5703125
+  },
+  "duration": 268.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555280.375,
+    "y": 135203.234375,
+    "z": 25651.5703125
+  },
+  "duration": 185.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555328.125,
+    "y": 135191.03125,
+    "z": 25651.5703125
+  },
+  "duration": 1076.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555788.25,
+    "y": 135092.53125,
+    "z": 25679.5703125
+  },
+  "duration": 418.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555916.875,
+    "y": 134965.96875,
+    "z": 25679.5703125
+  },
+  "duration": 4062.0000000000005
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556954.5625,
+    "y": 133207.171875,
+    "z": 25680.830078125
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556954.5625,
+    "y": 133207.171875,
+    "z": 25680.830078125
+  },
+  "duration": 1148.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557474.5625,
+    "y": 133070.46875,
+    "z": 25652.830078125
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557474.5625,
+    "y": 133070.46875,
+    "z": 25652.830078125
+  },
+  "duration": 1291.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557428.1875,
+    "y": 132704.609375,
+    "z": 25652.830078125
+  },
+  "duration": 1522.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556805.75,
+    "y": 132670.84375,
+    "z": 25652.830078125
+  },
+  "duration": 250.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556724.5,
+    "y": 132697.125,
+    "z": 25652.830078125
+  },
+  "duration": 536.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556700.5625,
+    "y": 132630.328125,
+    "z": 25652.830078125
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556700.5625,
+    "y": 132630.328125,
+    "z": 25652.830078125
+  },
+  "duration": 1193.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556574.25,
+    "y": 132263.46875,
+    "z": 25670.349609375
+  },
+  "duration": 2855.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555073.6875,
+    "y": 132548.65625,
+    "z": 25654.119140625
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555073.6875,
+    "y": 132548.65625,
+    "z": 25654.119140625
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555073.6875,
+    "y": 132548.65625,
+    "z": 25654.119140625
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555073.6875,
+    "y": 132548.65625,
+    "z": 25654.119140625
+  },
+  "duration": 2225.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 554997.75,
+    "y": 133321.796875,
+    "z": 25654.119140625
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 554997.75,
+    "y": 133321.796875,
+    "z": 25654.119140625
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 554997.75,
+    "y": 133321.796875,
+    "z": 25654.119140625
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 554997.75,
+    "y": 133321.796875,
+    "z": 25654.119140625
+  },
+  "duration": 518.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 554955.1875,
+    "y": 133307.078125,
+    "z": 25654.119140625
+  },
+  "duration": 184.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 554932.125,
+    "y": 133309.5625,
+    "z": 25654.119140625
+  },
+  "duration": 2627.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 554332.25,
+    "y": 132780.796875,
+    "z": 25682.119140625
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 554332.25,
+    "y": 132780.796875,
+    "z": 25682.119140625
+  },
+  "duration": 1583.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553921.6875,
+    "y": 132295.46875,
+    "z": 25668.91015625
+  },
+  "duration": 2285.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553705.125,
+    "y": 131631.5,
+    "z": 25676.33984375
+  },
+  "duration": 886.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553401,
+    "y": 131698.828125,
+    "z": 25676.33984375
+  },
+  "duration": 419.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553392,
+    "y": 131664.859375,
+    "z": 25676.33984375
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553392,
+    "y": 131664.859375,
+    "z": 25676.33984375
+  },
+  "duration": 343.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553391.8125,
+    "y": 131665.0625,
+    "z": 25676.33984375
+  },
+  "duration": 1205.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553368.875,
+    "y": 131524.703125,
+    "z": 25676.33984375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553368.875,
+    "y": 131524.703125,
+    "z": 25676.33984375
+  },
+  "duration": 2008.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553715.1875,
+    "y": 131573.171875,
+    "z": 25676.33984375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553715.1875,
+    "y": 131573.171875,
+    "z": 25676.33984375
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553715.1875,
+    "y": 131573.171875,
+    "z": 25676.33984375
+  },
+  "duration": 953.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553971.6875,
+    "y": 131464.53125,
+    "z": 25669.25
+  },
+  "duration": 1896.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553860.875,
+    "y": 130623.2421875,
+    "z": 25673.509765625
+  },
+  "duration": 1100.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553771.3125,
+    "y": 130796.171875,
+    "z": 25673.509765625
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553771.3125,
+    "y": 130796.171875,
+    "z": 25673.509765625
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553771.3125,
+    "y": 130796.171875,
+    "z": 25673.509765625
+  },
+  "duration": 554.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553664.9375,
+    "y": 130843.390625,
+    "z": 25673.509765625
+  },
+  "duration": 837.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553440.875,
+    "y": 130839.7265625,
+    "z": 25645.509765625
+  },
+  "duration": 217.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553437.375,
+    "y": 130833.296875,
+    "z": 25645.509765625
+  },
+  "duration": 185.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553436.875,
+    "y": 130833.90625,
+    "z": 25645.509765625
+  },
+  "duration": 167.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553436.75,
+    "y": 130834.796875,
+    "z": 25645.509765625
+  },
+  "duration": 1300.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553411.9375,
+    "y": 130564.78125,
+    "z": 25645.509765625
+  },
+  "duration": 217.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553408.3125,
+    "y": 130565.2890625,
+    "z": 25645.509765625
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553408.3125,
+    "y": 130565.2890625,
+    "z": 25645.509765625
+  },
+  "duration": 635.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553408.6875,
+    "y": 130565.203125,
+    "z": 25645.509765625
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553408.6875,
+    "y": 130565.203125,
+    "z": 25645.509765625
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553408.6875,
+    "y": 130565.203125,
+    "z": 25645.509765625
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553408.6875,
+    "y": 130565.203125,
+    "z": 25645.509765625
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553408.6875,
+    "y": 130565.203125,
+    "z": 25645.509765625
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553408.6875,
+    "y": 130565.203125,
+    "z": 25645.509765625
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553408.6875,
+    "y": 130565.203125,
+    "z": 25645.509765625
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553408.6875,
+    "y": 130565.203125,
+    "z": 25645.509765625
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553408.6875,
+    "y": 130565.203125,
+    "z": 25645.509765625
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553408.6875,
+    "y": 130565.203125,
+    "z": 25645.509765625
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553408.6875,
+    "y": 130565.203125,
+    "z": 25645.509765625
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553408.6875,
+    "y": 130565.203125,
+    "z": 25645.509765625
+  },
+  "duration": 987.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553408.6875,
+    "y": 130565.203125,
+    "z": 25645.509765625
+  },
+  "duration": 202.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553408.6875,
+    "y": 130565.203125,
+    "z": 25645.509765625
+  },
+  "duration": 502.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553408.6875,
+    "y": 130565.203125,
+    "z": 25645.509765625
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553408.6875,
+    "y": 130565.203125,
+    "z": 25645.509765625
+  },
+  "duration": 501.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553408.6875,
+    "y": 130565.203125,
+    "z": 25645.509765625
+  },
+  "duration": 2600.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 554168.5625,
+    "y": 130370.8984375,
+    "z": 25664.2890625
+  },
+  "duration": 2153.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553707.0625,
+    "y": 129844.1796875,
+    "z": 25671.220703125
+  },
+  "duration": 301.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553667.375,
+    "y": 129896.953125,
+    "z": 25671.220703125
+  },
+  "duration": 1120.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553385.5625,
+    "y": 129901.46875,
+    "z": 25643.220703125
+  },
+  "duration": 233.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553380.125,
+    "y": 129890.546875,
+    "z": 25643.220703125
+  },
+  "duration": 2410.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553396.9375,
+    "y": 129846.2734375,
+    "z": 25643.220703125
+  },
+  "duration": 3769.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553921.5625,
+    "y": 128366.796875,
+    "z": 25655.119140625
+  },
+  "duration": 3079.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555264.25,
+    "y": 128196.8984375,
+    "z": 25659.75
+  },
+  "duration": 4124.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555784.75,
+    "y": 128903.2734375,
+    "z": 25729.859375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555784.75,
+    "y": 128903.2734375,
+    "z": 25729.859375
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555784.75,
+    "y": 128903.2734375,
+    "z": 25729.859375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555784.75,
+    "y": 128903.2734375,
+    "z": 25729.859375
+  },
+  "duration": 759.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555764.8125,
+    "y": 128910.671875,
+    "z": 25729.859375
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555764.8125,
+    "y": 128910.671875,
+    "z": 25729.859375
+  },
+  "duration": 937.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555784.1875,
+    "y": 128925.9765625,
+    "z": 25729.859375
+  },
+  "duration": 1004.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555859.6875,
+    "y": 129155.2734375,
+    "z": 25701.859375
+  },
+  "duration": 105.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555881,
+    "y": 129188.1796875,
+    "z": 25729.859375
+  },
+  "duration": 766.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555871.75,
+    "y": 129187.25,
+    "z": 25701.859375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555871.75,
+    "y": 129187.25,
+    "z": 25701.859375
+  },
+  "duration": 3629.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556442.1875,
+    "y": 129081.84375,
+    "z": 25701.869140625
+  },
+  "duration": 3203.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556335.0625,
+    "y": 128009.859375,
+    "z": 25729.869140625
+  },
+  "duration": 2394.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556291.3125,
+    "y": 128533.3828125,
+    "z": 25701.859375
+  },
+  "duration": 129.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556297.5,
+    "y": 128531.2578125,
+    "z": 25701.859375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556297.5,
+    "y": 128531.2578125,
+    "z": 25701.859375
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556297.5,
+    "y": 128531.2578125,
+    "z": 25701.859375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556297.5,
+    "y": 128531.2578125,
+    "z": 25701.859375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556297.5,
+    "y": 128531.2578125,
+    "z": 25701.859375
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556297.5,
+    "y": 128531.2578125,
+    "z": 25701.859375
+  },
+  "duration": 500.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556289.75,
+    "y": 128533.90625,
+    "z": 25701.859375
+  },
+  "duration": 217.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556306.9375,
+    "y": 128528.0234375,
+    "z": 25701.859375
+  },
+  "duration": 518.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556302.625,
+    "y": 128520.3984375,
+    "z": 25701.859375
+  },
+  "duration": 520.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556306.125,
+    "y": 128524.28125,
+    "z": 25701.859375
+  },
+  "duration": 1611.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556550.3125,
+    "y": 128396.2109375,
+    "z": 25729.859375
+  },
+  "duration": 3851.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556958.6875,
+    "y": 128399.2265625,
+    "z": 25701.859375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556958.6875,
+    "y": 128399.2265625,
+    "z": 25701.859375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556958.6875,
+    "y": 128399.2265625,
+    "z": 25701.859375
+  },
+  "duration": 1119.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556634.6875,
+    "y": 128401.859375,
+    "z": 25729.859375
+  },
+  "duration": 1002.9999999999999
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556493.5,
+    "y": 128715.21875,
+    "z": 25729.859375
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556493.5,
+    "y": 128715.21875,
+    "z": 25729.859375
+  },
+  "duration": 540.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556680.6875,
+    "y": 128804.84375,
+    "z": 25802.509765625
+  },
+  "duration": 2793.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556475.1875,
+    "y": 128411.53125,
+    "z": 26069.859375
+  },
+  "duration": 2729.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556920.1875,
+    "y": 128370.9921875,
+    "z": 26041.859375
+  },
+  "duration": 418.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556922.0625,
+    "y": 128373.7109375,
+    "z": 26041.859375
+  },
+  "duration": 2998.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556333.1875,
+    "y": 128842.4765625,
+    "z": 26041.859375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556333.1875,
+    "y": 128842.4765625,
+    "z": 26041.859375
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556333.1875,
+    "y": 128842.4765625,
+    "z": 26041.859375
+  },
+  "duration": 1026.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556471,
+    "y": 129030.25,
+    "z": 26069.869140625
+  },
+  "duration": 33.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556481.1875,
+    "y": 129032.828125,
+    "z": 26069.869140625
+  },
+  "duration": 3174.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556160.25,
+    "y": 128963.3984375,
+    "z": 26069.859375
+  },
+  "duration": 2278.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555795.3125,
+    "y": 129222.75,
+    "z": 26041.859375
+  },
+  "duration": 1757.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556039.5,
+    "y": 129274.7734375,
+    "z": 26069.859375
+  },
+  "duration": 485.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556117.5,
+    "y": 129312.6796875,
+    "z": 26041.859375
+  },
+  "duration": 250.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556117.625,
+    "y": 129302.15625,
+    "z": 26041.859375
+  },
+  "duration": 2047.0000000000002
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555780.1875,
+    "y": 128716.2578125,
+    "z": 26041.859375
+  },
+  "duration": 8042.999999999999
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 554369.0625,
+    "y": 127533.5703125,
+    "z": 26027.26953125
+  },
+  "duration": 1958.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 553969.5625,
+    "y": 127520.25,
+    "z": 26026.9296875
+  },
+  "duration": 3123.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 554157,
+    "y": 128078.4375,
+    "z": 26026.9296875
+  },
+  "duration": 418.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 554187.5625,
+    "y": 128134.7578125,
+    "z": 26100.240234375
+  },
+  "duration": 6462.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 555963.4375,
+    "y": 131061.0703125,
+    "z": 25676.869140625
+  },
+  "duration": 10004.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557922,
+    "y": 136280.671875,
+    "z": 25670.5
+  },
+  "duration": 1235.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557825.3125,
+    "y": 136561.28125,
+    "z": 25642.630859375
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557825.3125,
+    "y": 136561.28125,
+    "z": 25642.630859375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557825.3125,
+    "y": 136561.28125,
+    "z": 25642.630859375
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557825.3125,
+    "y": 136561.28125,
+    "z": 25642.630859375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557825.3125,
+    "y": 136561.28125,
+    "z": 25642.630859375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557825.3125,
+    "y": 136561.28125,
+    "z": 25642.630859375
+  },
+  "duration": 652.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557814.75,
+    "y": 136558.328125,
+    "z": 25642.630859375
+  },
+  "duration": 1739.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557808.125,
+    "y": 136554.046875,
+    "z": 25642.630859375
+  },
+  "duration": 608.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557808.125,
+    "y": 136554.046875,
+    "z": 25642.630859375
+  },
+  "duration": 217.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557808.125,
+    "y": 136554.046875,
+    "z": 25642.630859375
+  },
+  "duration": 202.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557808.125,
+    "y": 136554.046875,
+    "z": 25642.630859375
+  },
+  "duration": 204.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557808.125,
+    "y": 136554.046875,
+    "z": 25642.630859375
+  },
+  "duration": 5140.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556559.875,
+    "y": 136448.296875,
+    "z": 25670.630859375
+  },
+  "duration": 2861.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556463.125,
+    "y": 136376.9375,
+    "z": 25724.56640625
+  },
+  "duration": 111.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556463.125,
+    "y": 136376.9375,
+    "z": 25724.56640625
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 556401.1875,
+    "y": 136367.59375,
+    "z": 25727.13671875
+  },
+  "duration": 3021.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557327.625,
+    "y": 135884.59375,
+    "z": 25726.642578125
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557352.0625,
+    "y": 135942.296875,
+    "z": 25725.17578125
+  },
+  "duration": 173.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557444.0625,
+    "y": 135923.734375,
+    "z": 25724.38671875
+  },
+  "duration": 3225.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557812.5625,
+    "y": 136544.484375,
+    "z": 25961.919921875
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557812.5625,
+    "y": 136544.484375,
+    "z": 25961.919921875
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557812.5625,
+    "y": 136544.484375,
+    "z": 25961.919921875
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557812.5625,
+    "y": 136544.484375,
+    "z": 25961.919921875
+  },
+  "duration": 316.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557812.5625,
+    "y": 136544.484375,
+    "z": 25961.919921875
+  },
+  "duration": 234.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557812.5625,
+    "y": 136544.484375,
+    "z": 25961.919921875
+  },
+  "duration": 55.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557812.5625,
+    "y": 136544,
+    "z": 25961.919921875
+  },
+  "duration": 1961.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557721.25,
+    "y": 135884.0625,
+    "z": 25724.59375
+  },
+  "duration": 864.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557721.25,
+    "y": 135884.0625,
+    "z": 25724.59375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557713.5,
+    "y": 135821.953125,
+    "z": 25727.12109375
+  },
+  "duration": 1058.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557792.6875,
+    "y": 135806.859375,
+    "z": 25727.4375
+  },
+  "duration": 896.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557971.6875,
+    "y": 135696.671875,
+    "z": 25727.01171875
+  },
+  "duration": 313.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557962.375,
+    "y": 135517.625,
+    "z": 25687.4296875
+  },
+  "duration": 1522.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557791.875,
+    "y": 135657.140625,
+    "z": 25642.630859375
+  },
+  "duration": 391.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557936.25,
+    "y": 135712.8125,
+    "z": 25722.525390625
+  },
+  "duration": 110.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 557936.25,
+    "y": 135712.8125,
+    "z": 25722.525390625
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 558002.3125,
+    "y": 135682.640625,
+    "z": 25727.10546875
+  },
+  "duration": 2884.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 558191.8125,
+    "y": 135537.71875,
+    "z": 25727.10546875
+  },
+  "duration": 10010.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 563343.75,
+    "y": 142908.890625,
+    "z": 25255.181640625
+  },
+  "duration": 10000.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 571232.75,
+    "y": 154269.5,
+    "z": 19458.021484375
+  },
+  "duration": 9996.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 589297.625,
+    "y": 156391.296875,
+    "z": 15956.060546875
+  },
+  "duration": 6383.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 587334,
+    "y": 159506.890625,
+    "z": 15355.693359375
+  },
+  "duration": 3613.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 587226.8125,
+    "y": 159781.390625,
+    "z": 15215.3203125
+  },
+  "duration": 10001.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 587219.875,
+    "y": 159756.25,
+    "z": 15223.7197265625
+  },
+  "duration": 10007.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 587345,
+    "y": 159716.765625,
+    "z": 15207.240234375
+  },
+  "duration": 9986.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 587323.3125,
+    "y": 159713,
+    "z": 15237.4599609375
+  },
+  "duration": 10000.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 587262.375,
+    "y": 159769.703125,
+    "z": 15209.5302734375
+  },
+  "duration": 6550.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 587238,
+    "y": 159716.96875,
+    "z": 15229
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 587238,
+    "y": 159716.96875,
+    "z": 15229
+  },
+  "duration": 3458.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 587209.5,
+    "y": 159750.890625,
+    "z": 15228.9501953125
+  },
+  "duration": 10004.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 587314.1875,
+    "y": 159662.75,
+    "z": 15222.240234375
+  },
+  "duration": 9995.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 588435.0625,
+    "y": 158100.65625,
+    "z": 15509.5703125
+  },
+  "duration": 9995.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 587145.0625,
+    "y": 159933.953125,
+    "z": 15265.3603515625
+  },
+  "duration": 10010.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 584500.0625,
+    "y": 158751.015625,
+    "z": 16278.259765625
+  },
+  "duration": 2001.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 584519.375,
+    "y": 158743.6875,
+    "z": 16272.0400390625
+  },
+  "duration": 754.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 584530.625,
+    "y": 158749.859375,
+    "z": 16264.9404296875
+  },
+  "duration": 5239.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 584417.75,
+    "y": 158583.90625,
+    "z": 16343.75
+  },
+  "duration": 1997.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 584469.25,
+    "y": 158349.28125,
+    "z": 16370.98046875
+  },
+  "duration": 5166.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585643.5625,
+    "y": 156132.03125,
+    "z": 16269.51953125
+  },
+  "duration": 2638.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 2194.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 130.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 384.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 754.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 1269.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 7094.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 374.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 2956.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 2279.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 2391.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 1622.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 741.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 11.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 520.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 535.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 585880.4375,
+    "y": 156217.15625,
+    "z": 16266.23046875
+  },
+  "duration": 8933.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 584605.875,
+    "y": 158375.03125,
+    "z": 16327.3896484375
+  },
+  "duration": 10005.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 584278,
+    "y": 159435.796875,
+    "z": 16229.759765625
+  },
+  "duration": 6579.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 587293.3125,
+    "y": 159474.3125,
+    "z": 15381.1318359375
+  },
+  "duration": 78.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 587293.3125,
+    "y": 159474.3125,
+    "z": 15381.1318359375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 587320.5625,
+    "y": 159524.859375,
+    "z": 15356.1044921875
+  },
+  "duration": 2680.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 587273.0625,
+    "y": 159918.453125,
+    "z": 15282.0029296875
+  },
+  "duration": 670.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 587368.75,
+    "y": 159884.421875,
+    "z": 15176.25
+  },
+  "duration": 646.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 587380.1875,
+    "y": 159895.140625,
+    "z": 15202.6103515625
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 587380.1875,
+    "y": 159895.140625,
+    "z": 15202.6103515625
+  },
+  "duration": 9346.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 587194.3125,
+    "y": 160041.484375,
+    "z": 15234.0703125
+  },
+  "duration": 2041.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 587316.5625,
+    "y": 159812.0625,
+    "z": 15285.6611328125
+  },
+  "duration": 7969.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 588054.3125,
+    "y": 167478.171875,
+    "z": 12010.0458984375
+  },
+  "duration": 6507.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 596577.1875,
+    "y": 171956.4375,
+    "z": 11164.8623046875
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 596577.1875,
+    "y": 171956.4375,
+    "z": 11164.8623046875
+  },
+  "duration": 3493.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 604009.1875,
+    "y": 172297.46875,
+    "z": 9149.0478515625
+  },
+  "duration": 9988.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 617193,
+    "y": 177686.265625,
+    "z": 8794.5625
+  },
+  "duration": 5370.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 617307,
+    "y": 182125.015625,
+    "z": 8482.7001953125
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 617282.3125,
+    "y": 182067.578125,
+    "z": 8486.65234375
+  },
+  "duration": 188.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 617247.5625,
+    "y": 182073.8125,
+    "z": 8492.5859375
+  },
+  "duration": 4449.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 617451,
+    "y": 181869.953125,
+    "z": 8375.01953125
+  },
+  "duration": 446.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 617411,
+    "y": 181826.3125,
+    "z": 8383.2001953125
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 617411,
+    "y": 181826.3125,
+    "z": 8383.2001953125
+  },
+  "duration": 7414.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 617412.125,
+    "y": 182506.84375,
+    "z": 8390.7099609375
+  },
+  "duration": 2130.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 617534.625,
+    "y": 182400.1875,
+    "z": 8370.8896484375
+  },
+  "duration": 686.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 617341.0625,
+    "y": 182121.1875,
+    "z": 8471.3818359375
+  },
+  "duration": 111.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 617341.0625,
+    "y": 182121.1875,
+    "z": 8471.3818359375
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 617271.875,
+    "y": 182134.671875,
+    "z": 8489.41015625
+  },
+  "duration": 9209.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 625121.375,
+    "y": 186167.546875,
+    "z": 6202.74609375
+  },
+  "duration": 7498.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 632591.3125,
+    "y": 191934.984375,
+    "z": 4068.59619140625
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 632592.75,
+    "y": 191996.5625,
+    "z": 4080.002685546875
+  },
+  "duration": 598.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 632596.3125,
+    "y": 191990.109375,
+    "z": 4037.552490234375
+  },
+  "duration": 1908.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 632281.5,
+    "y": 192125.765625,
+    "z": 4122.43994140625
+  },
+  "duration": 4762.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 631021.25,
+    "y": 192536.15625,
+    "z": 4397.9599609375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 631021.25,
+    "y": 192536.15625,
+    "z": 4397.9599609375
+  },
+  "duration": 1707.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 631068.375,
+    "y": 192611.859375,
+    "z": 4334.18994140625
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 631068.375,
+    "y": 192611.859375,
+    "z": 4334.18994140625
+  },
+  "duration": 1800.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 630424,
+    "y": 192919.59375,
+    "z": 4545.490234375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 630424,
+    "y": 192919.59375,
+    "z": 4545.490234375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 630424,
+    "y": 192919.59375,
+    "z": 4545.490234375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 630424,
+    "y": 192919.59375,
+    "z": 4545.490234375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 630424,
+    "y": 192919.59375,
+    "z": 4545.490234375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 630424,
+    "y": 192919.59375,
+    "z": 4545.490234375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 630424,
+    "y": 192919.59375,
+    "z": 4545.490234375
+  },
+  "duration": 1723.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 630424,
+    "y": 192919.59375,
+    "z": 4545.490234375
+  },
+  "duration": 10000.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 630424,
+    "y": 192919.59375,
+    "z": 4545.490234375
+  },
+  "duration": 48293.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 630424,
+    "y": 192919.59375,
+    "z": 4545.490234375
+  },
+  "duration": 1.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 630424,
+    "y": 192919.59375,
+    "z": 4545.490234375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 630424,
+    "y": 192919.59375,
+    "z": 4545.490234375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 630424,
+    "y": 192919.59375,
+    "z": 4545.490234375
+  },
+  "duration": 0.0
+}, {
+  "name": "OATH_PATKAPS",
+  "location": {
+    "x": 630424,
+    "y": 192919.59375,
+    "z": 4545.490234375
+  },
+  "duration": 1.0
+}]
