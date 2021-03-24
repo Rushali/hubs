@@ -10,6 +10,8 @@ import "./assets/stylesheets/hub.scss";
 import initialBatchImage from "./assets/images/warning_icon.png";
 import loadingEnvironment from "./assets/models/LoadingEnvironment.glb";
 
+
+
 import "aframe";
 import "./utils/logging";
 import { patchWebGLRenderingContext } from "./utils/webgl";
@@ -172,6 +174,13 @@ window.APP.RENDER_ORDER = {
   HUD_ICONS: 2,
   CURSOR: 3
 };
+
+
+var userIDMonk = "0";
+var hubIDMonk = "0";
+
+var canMoveThings = false;
+
 const store = window.APP.store;
 store.update({ preferences: { shouldPromptForRefresh: undefined } }); // Clear flag that prompts for refresh from preference screen
 const mediaSearchStore = window.APP.mediaSearchStore;
@@ -728,7 +737,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     (document.location.pathname === "/" && defaultRoomId
       ? defaultRoomId
       : document.location.pathname.substring(1).split("/")[0]);
+
+  hubIDMonk = hubId;
   console.log(`Hub ID: ${hubId}`);
+
+    
 
   if (!defaultRoomId) {
     // Default room won't work if account is required to access
@@ -763,13 +776,23 @@ document.addEventListener("DOMContentLoaded", async () => {
     .setAttribute("media-image", { batch: true, src: initialBatchImage, contentType: "image/png" });
 
   const onSceneLoaded = () => {
+    
     const physicsSystem = scene.systems["hubs-systems"].physicsSystem;
     physicsSystem.setDebug(isDebug || physicsSystem.debug);
     patchThreeAllocations();
+
+
+
+
+            //
+
   };
 
   if (scene.hasLoaded) {
     onSceneLoaded();
+    
+   
+
   } else {
     scene.addEventListener("loaded", onSceneLoaded, { once: true });
   }
@@ -1032,6 +1055,43 @@ document.addEventListener("DOMContentLoaded", async () => {
   environmentScene.addEventListener("model-loaded", ({ detail: { model } }) => {
     if (!scene.is("entered")) {
       setupLobbyCamera();
+
+
+
+
+
+      function randomIntFromInterval(min,max){
+          return Math.floor(Math.random()*(max-min+1)+min);
+      }
+
+      function randomFloatFromInterval(min,max){
+          return (Math.random()*(max-min+1)+min);
+      }
+
+      function moveRandomObject(){
+
+        
+
+        var objectInndex = randomIntFromInterval(0,3);
+        var xpos0 = randomFloatFromInterval(-14.2, -17.2)
+        var zpos0 = randomFloatFromInterval(-3.5, -1.5)
+
+        var players = document.querySelectorAll("[gltf-model-plus][networked]")
+        if(players != undefined){
+          var objectToMove = players[objectInndex]
+          var objectToMove_pos = AFRAME.ANIME.default.timeline({targets:objectToMove.object3D.position, autoPlay:false, dur: 3400, easing: "easeInQuad"})
+          console.log(objectToMove.object3D.position)
+
+          objectToMove_pos.add({x:xpos0, y:4.82, z:zpos0})
+          objectToMove_pos.restart() 
+        }
+      }
+
+      setInterval( moveRandomObject , 4000)
+
+   
+
+
     }
 
     // This will be run every time the environment is changed (including the first load.)
@@ -1108,7 +1168,22 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const { token } = store.state.credentials;
     if (token) {
+      userIDMonk = store.credentialsAccountId;
+
+    //YkZCYTG is the id of the hUBS test.
+    //722440116198440962 is Luis Hubs id 
+    //686570245938216994 Local test IDD
+
+    if(hubIDMonk == "stKiUBy" && userIDMonk == "686570245938216994"){
+      alert("user is Luis :" + userIDMonk);
+      alert("injecting code just for room LOL styles");
+
+      canMoveThings = true;
+
+    }
+
       console.log(`Logged into account ${store.credentialsAccountId}`);
+
       params.auth_token = token;
     }
 
@@ -1167,6 +1242,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     presenceLogEntries.push(entry);
     remountUI({ presenceLogEntries });
     if (entry.type === "chat" && scene.is("loaded")) {
+
       scene.systems["hubs-systems"].soundEffectsSystem.playSoundOneShot(SOUND_CHAT_MESSAGE);
     }
 
@@ -1455,6 +1531,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   hubPhxChannel.on("message", ({ session_id, type, body, from }) => {
     const getAuthor = () => {
       const userInfo = hubChannel.presence.state[session_id];
+      
       if (from) {
         return from;
       } else if (userInfo) {
