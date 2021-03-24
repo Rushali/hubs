@@ -10,6 +10,26 @@ import "./assets/stylesheets/hub.scss";
 import initialBatchImage from "./assets/images/warning_icon.png";
 import loadingEnvironment from "./assets/models/LoadingEnvironment.glb";
 
+import DAY_Flash from "./assets/jsons/DAY_Flash_duration.json";
+import DAY_Nourinz from "./assets/jsons/DAY_Nourinz_duration.json";
+import DAY_PuuChiwz from "./assets/jsons/DAY_PuuChiwz_duration.json";
+import DAY_vanOtica from "./assets/jsons/DAY_vanOtica_duration.json";
+
+import MCG_995iTank from "./assets/jsons/MCG_995iTank_duration.json";
+import MCG_EviLLee from "./assets/jsons/MCG_EviLLee_duration.json";
+import MCG_LingDuuuuuu from "./assets/jsons/MCG_LingDuuuuuu_duration.json";
+import MCG_Summer from "./assets/jsons/MCG_Summer_duration.json";
+
+import OATH_Balefrost from "./assets/jsons/OATH_Balefrost_duration.json";
+import OATH_PATKAPS from "./assets/jsons/OATH_PATKAPS_duration.json";
+import OATH_Relo from "./assets/jsons/OATH_Relo_duration.json";
+import OATH_Snakers from "./assets/jsons/OATH_Snakers_duration.json";
+
+import TL_clib from "./assets/jsons/TL_clib_duration.json";
+import TL_ibiza from "./assets/jsons/TL_ibiza_duration.json";
+import TL_jeemzz from "./assets/jsons/TL_jeemzz_duration.json";
+import TL_mxey from "./assets/jsons/TL_mxey_duration.json";
+
 
 
 import "aframe";
@@ -741,7 +761,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   hubIDMonk = hubId;
   console.log(`Hub ID: ${hubId}`);
 
-    
+// this is the json file use case @Luis
+  const something = DAY_Flash;
+  console.log(something);
+
+
 
   if (!defaultRoomId) {
     // Default room won't work if account is required to access
@@ -776,7 +800,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     .setAttribute("media-image", { batch: true, src: initialBatchImage, contentType: "image/png" });
 
   const onSceneLoaded = () => {
-    
+
     const physicsSystem = scene.systems["hubs-systems"].physicsSystem;
     physicsSystem.setDebug(isDebug || physicsSystem.debug);
     patchThreeAllocations();
@@ -790,8 +814,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (scene.hasLoaded) {
     onSceneLoaded();
-    
-   
+
+
 
   } else {
     scene.addEventListener("loaded", onSceneLoaded, { once: true });
@@ -1070,7 +1094,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       function moveRandomObject(){
 
-        
+
 
         var objectInndex = randomIntFromInterval(0,3);
         var xpos0 = randomFloatFromInterval(-14.2, -17.2)
@@ -1083,13 +1107,13 @@ document.addEventListener("DOMContentLoaded", async () => {
           console.log(objectToMove.object3D.position)
 
           objectToMove_pos.add({x:xpos0, y:4.82, z:zpos0})
-          objectToMove_pos.restart() 
+          objectToMove_pos.restart()
         }
       }
 
       setInterval( moveRandomObject , 4000)
 
-   
+
 
 
     }
@@ -1171,7 +1195,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       userIDMonk = store.credentialsAccountId;
 
     //YkZCYTG is the id of the hUBS test.
-    //722440116198440962 is Luis Hubs id 
+    //722440116198440962 is Luis Hubs id
     //686570245938216994 Local test IDD
 
     if(hubIDMonk == "stKiUBy" && userIDMonk == "686570245938216994"){
@@ -1531,7 +1555,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   hubPhxChannel.on("message", ({ session_id, type, body, from }) => {
     const getAuthor = () => {
       const userInfo = hubChannel.presence.state[session_id];
-      
+
       if (from) {
         return from;
       } else if (userInfo) {
