@@ -25,6 +25,30 @@
     }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <style>
+        /* Ease the transition to the load screen by displaying a default overlay */
+        #preload-overlay {
+            pointer-events: none;
+            transition: opacity 0.5s linear;
+            opacity: 1;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, #EEEEEE 100%);
+        }
+
+        #preload-overlay.loaded {
+            opacity: 0;
+        }
+
+        @media (prefers-reduced-motion) {
+            #preload-overlay {
+                transition: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
