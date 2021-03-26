@@ -1261,19 +1261,31 @@ document.addEventListener("DOMContentLoaded", async () => {
           const Mcg_9 = MCG_995iTank;
           const Mcg_L = MCG_LingDuuuuuu;
 
+          let Day_Players = [];
+          let Oath_Players = [];
+          let Tl_Players = [];
+          let Mcg_Players = [];
+
           const reScaleFactor = .2;
           const mult = 120000;
 
           let players = document.querySelectorAll("[gltf-model-plus][networked][id^=naf]");
           let players_array = Array.from(players);
-          let Day_Players = players_array.slice(0, 4);
-          console.log(Day_Players);
-          let Oath_Players = players_array.slice(4, 4);
-          console.log(Oath_Players);
-          let Tl_Players = players_array.slice(8, 4);
-          console.log(Tl_Players);
-          let Mcg_Players = players_array.slice(12, 4);
-          console.log(Mcg_Players);
+          if(players_array.length == 16) {
+            players_array.forEach((player, i) => {
+              if(i < 4) {
+                Day_Players.push(player);
+              } else if(i > 3 && i < 8) {
+                Oath_Players.push(player);
+              } else if(i > 7 && i < 12) {
+                Tl_Players.push(player)
+              } else if(i > 11 && i < 16) {
+                Mcg_Players.push(player)
+              }
+            });
+          } else {
+            console.log('players_array is not 16');
+          }
 
           Day_Players.forEach((item, i) => {
             console.log("ID-->" + item.id);
