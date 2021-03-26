@@ -30,10 +30,6 @@ import "./assets/stylesheets/hub.scss";
 import initialBatchImage from "./assets/images/warning_icon.png";
 import loadingEnvironment from "./assets/models/LoadingEnvironment.glb";
 
-import "./assets/stylesheets/hub.scss";
-import initialBatchImage from "./assets/images/warning_icon.png";
-import loadingEnvironment from "./assets/models/LoadingEnvironment.glb";
-
 import "aframe";
 import "./utils/logging";
 import {
@@ -165,7 +161,9 @@ import {
   pushHistoryState
 } from "./utils/history";
 import UIRoot from "./react-components/ui-root";
-import { ExitedRoomScreenContainer } from "./react-components/room/ExitedRoomScreenContainer";
+import {
+  ExitedRoomScreenContainer
+} from "./react-components/room/ExitedRoomScreenContainer";
 import AuthChannel from "./utils/auth-channel";
 import HubChannel from "./utils/hub-channel";
 import LinkChannel from "./utils/link-channel";
@@ -220,9 +218,13 @@ import {
 
 import "./gltf-component-mappings";
 
-import { App } from "./App";
+import {
+  App
+} from "./App";
 import MediaDevicesManager from "./utils/media-devices-manager";
-import { platformUnsupported } from "./support";
+import {
+  platformUnsupported
+} from "./support";
 
 window.APP = new App();
 window.APP.RENDER_ORDER = {
@@ -232,10 +234,10 @@ window.APP.RENDER_ORDER = {
 };
 
 
-var userIDMonk = "0";
-var hubIDMonk = "0";
+let userIDMonk = "0";
+let hubIDMonk = "0";
 
-var canMoveThings = false;
+let canMoveThings = false;
 
 const store = window.APP.store;
 store.update({
@@ -289,10 +291,18 @@ import {
 import detectConcurrentLoad from "./utils/concurrent-load-detector";
 
 import qsTruthy from "./utils/qs_truthy";
-import { WrappedIntlProvider } from "./react-components/wrapped-intl-provider";
-import { ExitReason } from "./react-components/room/ExitedRoomScreen";
-import { OAuthScreenContainer } from "./react-components/auth/OAuthScreenContainer";
-import { SignInMessages } from "./react-components/auth/SignInModal";
+import {
+  WrappedIntlProvider
+} from "./react-components/wrapped-intl-provider";
+import {
+  ExitReason
+} from "./react-components/room/ExitedRoomScreen";
+import {
+  OAuthScreenContainer
+} from "./react-components/auth/OAuthScreenContainer";
+import {
+  SignInMessages
+} from "./react-components/auth/SignInModal";
 
 const PHOENIX_RELIABLE_NAF = "phx-reliable";
 NAF.options.firstSyncSource = PHOENIX_RELIABLE_NAF;
@@ -366,33 +376,44 @@ function mountUI(props = {}) {
     qsTruthy("allow_idle") || (process.env.NODE_ENV === "development" && !qs.get("idle_timeout"));
   const forcedVREntryType = qsVREntryType;
 
-  ReactDOM.render(
-    <WrappedIntlProvider>
-      <Router history={history}>
-        <Route
-          render={routeProps =>
-            props.showOAuthScreen ? (
-              <OAuthScreenContainer oauthInfo={props.oauthInfo} />
-            ) : props.roomUnavailableReason ? (
-              <ExitedRoomScreenContainer reason={props.roomUnavailableReason} />
-            ) : (
-              <UIRoot
-                {...{
-                  scene,
-                  isBotMode,
-                  disableAutoExitOnIdle,
-                  forcedVREntryType,
-                  store,
-                  mediaSearchStore,
-                  ...props,
-                  ...routeProps
-                }}
-              />
-            )
-          }
+  ReactDOM.render( <
+    WrappedIntlProvider >
+    <
+    Router history = {
+      history
+    } >
+    <
+    Route render = {
+      routeProps =>
+      props.showOAuthScreen ? ( <
+        OAuthScreenContainer oauthInfo = {
+          props.oauthInfo
+        }
         />
-      </Router>
-    </WrappedIntlProvider>,
+      ) : props.roomUnavailableReason ? ( <
+        ExitedRoomScreenContainer reason = {
+          props.roomUnavailableReason
+        }
+        />
+      ) : ( <
+        UIRoot {
+          ...{
+            scene,
+            isBotMode,
+            disableAutoExitOnIdle,
+            forcedVREntryType,
+            store,
+            mediaSearchStore,
+            ...props,
+            ...routeProps
+          }
+        }
+        />
+      )
+    }
+    /> <
+    /Router> <
+    /WrappedIntlProvider>,
     document.getElementById("ui-root")
   );
 }
@@ -416,7 +437,9 @@ async function updateEnvironmentForHub(hub, entryManager) {
   let isLegacyBundle; // Deprecated
 
   const sceneErrorHandler = () => {
-    remountUI({ roomUnavailableReason: ExitReason.sceneError });
+    remountUI({
+      roomUnavailableReason: ExitReason.sceneError
+    });
     entryManager.exitScene();
   };
 
@@ -750,7 +773,9 @@ function handleHubChannelJoined(entryManager, hubChannel, messageDispatch, data)
 
       function onConnectionError() {
         console.error("Unknown error occurred while attempting to connect to networked scene.");
-        remountUI({ roomUnavailableReason: ExitReason.connectError });
+        remountUI({
+          roomUnavailableReason: ExitReason.connectError
+        });
         entryManager.exitScene();
       }
 
@@ -766,7 +791,9 @@ function handleHubChannelJoined(entryManager, hubChannel, messageDispatch, data)
           // hacky until we get return codes
           const isFull = connectError.msg && connectError.msg.match(/\bfull\b/i);
           console.error(connectError);
-          remountUI({ roomUnavailableReason: isFull ? ExitReason.full : ExitReason.connectError });
+          remountUI({
+            roomUnavailableReason: isFull ? ExitReason.full : ExitReason.connectError
+          });
           entryManager.exitScene();
 
           return;
@@ -858,18 +885,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const hubId =
     qs.get("hub_id") ||
-    (document.location.pathname === "/" && defaultRoomId
-      ? defaultRoomId
-      : document.location.pathname.substring(1).split("/")[0]);
+    (document.location.pathname === "/" && defaultRoomId ?
+      defaultRoomId :
+      document.location.pathname.substring(1).split("/")[0]);
 
   hubIDMonk = hubId;
   console.log(`Hub ID: ${hubId}`);
-
-// this is the json file use case @Luis
-  const something = DAY_Flash;
-  console.log(something);
-
-
 
   if (!defaultRoomId) {
     // Default room won't work if account is required to access
@@ -916,7 +937,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 
-            //
+    //
 
   };
 
@@ -1106,7 +1127,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     enterScene: entryManager.enterScene,
     exitScene: reason => {
       entryManager.exitScene();
-      remountUI({ roomUnavailableReason: reason || ExitReason.exited });
+      remountUI({
+        roomUnavailableReason: reason || ExitReason.exited
+      });
     },
     initialIsSubscribed: subscriptions.isSubscribed()
   });
@@ -1118,13 +1141,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   scene.addEventListener("leave_room_requested", () => {
     entryManager.exitScene();
-    remountUI({ roomUnavailableReason: ExitReason.left });
+    remountUI({
+      roomUnavailableReason: ExitReason.left
+    });
   });
 
   scene.addEventListener("hub_closed", () => {
     scene.exitVR();
     entryManager.exitScene();
-    remountUI({ roomUnavailableReason: ExitReason.closed });
+    remountUI({
+      roomUnavailableReason: ExitReason.closed
+    });
   });
 
   scene.addEventListener("action_camera_recording_started", () => hubChannel.beginRecording());
@@ -1134,7 +1161,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     const buildNumber = process.env.BUILD_VERSION.split(" ", 1)[0]; // e.g. "123 (abcd5678)"
 
     if (qs.get("required_version") !== buildNumber) {
-      remountUI({ roomUnavailableReason: ExitReason.versionMismatch });
+      remountUI({
+        roomUnavailableReason: ExitReason.versionMismatch
+      });
       setTimeout(() => document.location.reload(), 5000);
       entryManager.exitScene();
       return;
@@ -1148,7 +1177,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       qs.get("required_ret_version") &&
       (qs.get("required_ret_version") !== reticulumMeta.version || qs.get("required_ret_pool") !== reticulumMeta.pool)
     ) {
-      remountUI({ roomUnavailableReason: ExitReason.versionMismatch });
+      remountUI({
+        roomUnavailableReason: ExitReason.versionMismatch
+      });
       setTimeout(() => document.location.reload(), 5000);
       entryManager.exitScene();
       return;
@@ -1205,42 +1236,140 @@ document.addEventListener("DOMContentLoaded", async () => {
   }) => {
     if (!scene.is("entered")) {
       setupLobbyCamera();
-      ////BEGININNG OF INJECTEED CODE
+      ////BEGININNG OF INJECTED CODE
 
       if (canMoveThings) {
 
         setTimeout(function() {
           const Day_F = DAY_Flash;
+          const Day_N = DAY_Nourinz;
+          const Day_P = DAY_PuuChiwz;
+          const Day_V = DAY_vanOtica;
+
+          const Oath_R = OATH_Relo;
+          const Oath_P = OATH_PATKAPS;
+          const Oath_S = OATH_Snakers;
+          const Oath_B = OATH_Balefrost;
+
+          const Tl_C = TL_clib;
+          const Tl_M = TL_mxey;
+          const Tl_I = TL_ibiza;
+          const Tl_J = TL_jeemzz;
+
+          const Mcg_S = MCG_Summer;
+          const Mcg_E = MCG_EviLLee;
+          const Mcg_9 = MCG_995iTank;
+          const Mcg_L = MCG_LingDuuuuuu;
+
           const reScaleFactor = .2;
           const mult = 120000;
 
-          var incr = 0;
-          var players = document.querySelectorAll("[gltf-model-plus][networked]")
-          var playerDayTest = players[0]
+          let players = document.querySelectorAll("[gltf-model-plus][networked][id^=naf]");
+          let players_array = Array.from(players);
+          let Day_Players = players_array.slice(0, 4);
+          console.log(Day_Players);
+          let Oath_Players = players_array.slice(4, 4);
+          console.log(Oath_Players);
+          let Tl_Players = players_array.slice(8, 4);
+          console.log(Tl_Players);
+          let Mcg_Players = players_array.slice(12, 4);
+          console.log(Mcg_Players);
 
-          playerDayTest.object3D.position.set(Day_F[0].location.x / mult, Day_F[0].location.z / mult, Day_F[0].location.y / mult);
+          Day_Players.forEach((item, i) => {
+            console.log("ID-->" + item.id);
+            if (i == 0) {
+              item.object3D.position.set(Day_F[0].location.x / mult, Day_F[0].location.z / mult, Day_F[0].location.y / mult);
+            } else if (i == 1) {
+              item.object3D.position.set(Day_N[0].location.x / mult, Day_N[0].location.z / mult, Day_N[0].location.y / mult);
+            } else if (i == 2) {
+              item.object3D.position.set(Day_P[0].location.x / mult, Day_P[0].location.z / mult, Day_P[0].location.y / mult);
+            } else if (i == 3) {
+              item.object3D.position.set(Day_V[0].location.x / mult, Day_V[0].location.z / mult, Day_V[0].location.y / mult);
+            }
+            item.object3D.scale.set(reScaleFactor, reScaleFactor, reScaleFactor);
+          });
 
+          Oath_Players.forEach((item, i) => {
+            console.log("ID-->" + item.id);
+            if (i == 0) {
+              item.object3D.position.set(Oath_R[0].location.x / mult, Oath_R[0].location.z / mult, Oath_R[0].location.y / mult);
+            } else if (i == 1) {
+              item.object3D.position.set(Oath_P[0].location.x / mult, Oath_P[0].location.z / mult, Oath_P[0].location.y / mult);
+            } else if (i == 2) {
+              item.object3D.position.set(Oath_S[0].location.x / mult, Oath_S[0].location.z / mult, Oath_S[0].location.y / mult);
+            } else if (i == 3) {
+              item.object3D.position.set(Oath_B[0].location.x / mult, Oath_B[0].location.z / mult, Oath_B[0].location.y / mult);
+            }
+            item.object3D.scale.set(reScaleFactor, reScaleFactor, reScaleFactor);
+          });
 
-          var target0Pos = playerDayTest.object3D.position;
+          Tl_Players.forEach((item, i) => {
+            console.log("ID-->" + item.id);
+            if (i == 0) {
+              item.object3D.position.set(Tl_C[0].location.x / mult, Tl_C[0].location.z / mult, Tl_C[0].location.y / mult);
+            } else if (i == 1) {
+              item.object3D.position.set(Tl_M[0].location.x / mult, Tl_M[0].location.z / mult, Tl_M[0].location.y / mult);
+            } else if (i == 2) {
+              item.object3D.position.set(Tl_I[0].location.x / mult, Tl_I[0].location.z / mult, Tl_I[0].location.y / mult);
+            } else if (i == 3) {
+              item.object3D.position.set(Tl_J[0].location.x / mult, Tl_J[0].location.z / mult, Tl_J[0].location.y / mult);
+            }
+            item.object3D.scale.set(reScaleFactor, reScaleFactor, reScaleFactor);
+          });
 
-          console.log("ID-->" + playerDayTest.id);
+          Mcg_Players.forEach((item, i) => {
+            console.log("ID-->" + item.id);
+            if (i == 0) {
+              item.object3D.position.set(Mcg_S[0].location.x / mult, Mcg_S[0].location.z / mult, Mcg_S[0].location.y / mult);
+            } else if (i == 1) {
+              item.object3D.position.set(Mcg_E[0].location.x / mult, Mcg_E[0].location.z / mult, Mcg_E[0].location.y / mult);
+            } else if (i == 2) {
+              item.object3D.position.set(Mcg_9[0].location.x / mult, Mcg_9[0].location.z / mult, Mcg_9[0].location.y / mult);
+            } else if (i == 3) {
+              item.object3D.position.set(Mcg_L[0].location.x / mult, Mcg_L[0].location.z / mult, Mcg_L[0].location.y / mult);
+            }
+            item.object3D.scale.set(reScaleFactor, reScaleFactor, reScaleFactor);
+          });
+          let incr = 0;
+          movePlayer(Day_Players[0].object3D.position, Day_F);
+          movePlayer(Day_Players[1].object3D.position, Day_N);
+          movePlayer(Day_Players[2].object3D.position, Day_P);
+          movePlayer(Day_Players[3].object3D.position, Day_V);
+          movePlayer(Oath_Players[0].object3D.position, Oath_R);
+          movePlayer(Oath_Players[1].object3D.position, Oath_P);
+          movePlayer(Oath_Players[2].object3D.position, Oath_S);
+          movePlayer(Oath_Players[3].object3D.position, Oath_B);
+          movePlayer(Tl_Players[0].object3D.position, Tl_C);
+          movePlayer(Tl_Players[1].object3D.position, Tl_M);
+          movePlayer(Tl_Players[2].object3D.position, Tl_I);
+          movePlayer(Tl_Players[3].object3D.position, Tl_J);
+          movePlayer(Mcg_Players[0].object3D.position, Mcg_S);
+          movePlayer(Mcg_Players[1].object3D.position, Mcg_E);
+          movePlayer(Mcg_Players[2].object3D.position, Mcg_9);
+          movePlayer(Mcg_Players[3].object3D.position, Mcg_L);
 
-          playerDayTest.object3D.scale.set(reScaleFactor, reScaleFactor, reScaleFactor);
-
-          MovePlayer(target0Pos, Day_F[incr]);
-
-          function MovePlayer(positionToTween) {
-            var newDuration = (Day_F[incr].duration * .001) + .1;
-            TweenMax.to(positionToTween, newDuration, {
-              x: Day_F[incr + 1].location.x / mult,
-              y: Day_F[incr + 1].location.z / mult,
-              z: Day_F[incr + 1].location.y / mult,
-              onComplete: MovePlayer,
-              onCompleteParams: [positionToTween],
-              ease: Linear.easeNone
-            })
-            console.log("newDuration -->" + newDuration);
-            incr += 1;
+          function movePlayer(positionToTween, who) {
+            if (who && who.length > 0) {
+              // if(who[incr] && who[incr+1]) {
+              //   // console.log('incr and incr+1' + incr+1)
+              // }
+              var newDuration = (who[incr].duration * .001) + .1;
+              TweenMax.to(positionToTween, newDuration, {
+                x: who[incr + 1].location.x / mult,
+                y: who[incr + 1].location.z / mult,
+                z: who[incr + 1].location.y / mult,
+                onComplete: movePlayer,
+                onCompleteParams: [positionToTween, who],
+                ease: Linear.easeNone
+              });
+              //console.log("newDuration is " + newDuration + ' for ' + who[0].name);
+              if (incr < who.length-1) {
+                incr += 1;
+              } else {
+                console.log('end of json')
+                incr = 0;
+              }
+            }
           }
         }, 3000);
 
@@ -1270,13 +1399,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   socket.onClose(e => {
     // We don't currently have an easy way to distinguish between being kicked (server closes socket)
-    // and a variety of other network issues that seem to produce the 1000 closure code, but the
+    // and a letiety of other network issues that seem to produce the 1000 closure code, but the
     // latter are probably more common. Either way, we just tell the user they got disconnected.
     const NORMAL_CLOSURE = 1000;
 
     if (e.code === NORMAL_CLOSURE && !isReloading) {
       entryManager.exitScene();
-      remountUI({ roomUnavailableReason: ExitReason.disconnected });
+      remountUI({
+        roomUnavailableReason: ExitReason.disconnected
+      });
     }
   });
 
@@ -1594,7 +1725,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       const permsToken = oauthFlowPermsToken || data.perms_token;
       hubChannel.setPermissionsFromToken(permsToken);
 
-      scene.addEventListener("adapter-ready", async ({ detail: adapter }) => {
+      scene.addEventListener("adapter-ready", async ({
+        detail: adapter
+      }) => {
         // HUGE HACK Safari does not like it if the first peer seen does not immediately
         // send audio over its media stream. Otherwise, the stream doesn't work and stays
         // silent. (Though subsequent peers work fine.) This only affects naf janus adapter
@@ -1672,13 +1805,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     .receive("error", res => {
       if (res.reason === "closed") {
         entryManager.exitScene();
-        remountUI({ roomUnavailableReason: ExitReason.closed });
+        remountUI({
+          roomUnavailableReason: ExitReason.closed
+        });
       } else if (res.reason === "oauth_required") {
         entryManager.exitScene();
-        remountUI({ oauthInfo: res.oauth_info, showOAuthScreen: true });
+        remountUI({
+          oauthInfo: res.oauth_info,
+          showOAuthScreen: true
+        });
       } else if (res.reason === "join_denied") {
         entryManager.exitScene();
-        remountUI({ roomUnavailableReason: ExitReason.denied });
+        remountUI({
+          roomUnavailableReason: ExitReason.denied
+        });
       }
 
       console.error(res);
