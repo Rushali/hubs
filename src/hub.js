@@ -1290,6 +1290,8 @@ document.addEventListener("DOMContentLoaded", async () => {
           } else {
             console.log('players_array is not 16');
           }
+          
+          console.log("initial player positioning");
 
           Day_Players.forEach((item, i) => {
             if (i == 0) {
