@@ -1270,8 +1270,8 @@ document.addEventListener("DOMContentLoaded", async () => {
           let Tl_Players = [];
           let Mcg_Players = [];
 
-          const reScaleFactor = .2;
-          const mult = 120000;
+          const reScaleFactor = .75;
+          const mult = 150000;
 
           let players = document.querySelectorAll("[gltf-model-plus][networked][id^=naf]");
           let players_array = Array.from(players);
@@ -1374,7 +1374,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               let newDuration = (who[incr].duration * .001) + .1;
               TweenMax.to(positionToTween, newDuration, {
                 x: who[incr + 1].location.x / mult,
-                y: who[incr + 1].location.z / mult,
+                y: 1.5,//who[incr + 1].location.z / mult,
                 z: who[incr + 1].location.y / mult,
                 onComplete: movePlayer,
                 onCompleteParams: [positionToTween, who, incr + 1],
@@ -1477,17 +1477,14 @@ document.addEventListener("DOMContentLoaded", async () => {
       //722440116198440962 is Luis Hubs id
       //686570245938216994 Local test IDD
 
-      if (hubIDMonk == "stKiUBy" && userIDMonk == "686570245938216994") {
+      if (hubIDMonk == "4Gd9foX" && userIDMonk == "722440116198440962") {
         alert("user is Luis :" + userIDMonk);
-        alert("injecting code just for room LOL styles");
+        
 
         canMoveThings = true;
 
       }
       ///REMOVE ME BEFORE DEPLOY
-      canMoveThings = true;
-
-
       console.log(`Logged into account ${store.credentialsAccountId}`);
 
       params.auth_token = token;
