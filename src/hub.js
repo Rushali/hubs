@@ -5,6 +5,8 @@ import "./utils/theme";
 import "@babel/polyfill";
 
 console.log(`App version: ${process.env.BUILD_VERSION || "?"}`);
+import { TweenMax } from "gsap/all";
+
 
 import DAY_Flash from "./assets/jsons/DAY_Flash_duration.json";
 import DAY_Nourinz from "./assets/jsons/DAY_Nourinz_duration.json";
