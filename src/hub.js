@@ -5,7 +5,9 @@ import "./utils/theme";
 import "@babel/polyfill";
 
 console.log(`App version: ${process.env.BUILD_VERSION || "?"}`);
-import { TweenMax } from "gsap/all";
+import {
+  TweenMax
+} from "gsap/all";
 
 
 import DAY_Flash from "./assets/jsons/DAY_Flash_duration.json";
@@ -413,8 +415,8 @@ function mountUI(props = {}) {
         />
       )
     }
-    /> <
-    /Router> <
+    /> < /
+    Router > <
     /WrappedIntlProvider>,
     document.getElementById("ui-root")
   );
@@ -1273,15 +1275,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
           let players = document.querySelectorAll("[gltf-model-plus][networked][id^=naf]");
           let players_array = Array.from(players);
-          if(players_array.length == 16) {
+          if (players_array.length == 16) {
             players_array.forEach((player, i) => {
-              if(i < 4) {
+              if (i < 4) {
                 Day_Players.push(player);
-              } else if(i > 3 && i < 8) {
+              } else if (i > 3 && i < 8) {
                 Oath_Players.push(player);
-              } else if(i > 7 && i < 12) {
+              } else if (i > 7 && i < 12) {
                 Tl_Players.push(player)
-              } else if(i > 11 && i < 16) {
+              } else if (i > 11 && i < 16) {
                 Mcg_Players.push(player)
               }
             });
@@ -1341,33 +1343,37 @@ document.addEventListener("DOMContentLoaded", async () => {
             item.object3D.scale.set(reScaleFactor, reScaleFactor, reScaleFactor);
           });
 
-          movePlayer(Day_Players[0].object3D.position, Day_F, 0);
-          movePlayer(Day_Players[1].object3D.position, Day_N, 0);
-          movePlayer(Day_Players[2].object3D.position, Day_P, 0);
-          movePlayer(Day_Players[3].object3D.position, Day_V, 0);
-          movePlayer(Oath_Players[0].object3D.position, Oath_R, 0);
-          movePlayer(Oath_Players[1].object3D.position, Oath_P, 0);
-          movePlayer(Oath_Players[2].object3D.position, Oath_S, 0);
-          movePlayer(Oath_Players[3].object3D.position, Oath_B, 0);
-          movePlayer(Tl_Players[0].object3D.position, Tl_C, 0);
-          movePlayer(Tl_Players[1].object3D.position, Tl_M, 0);
-          movePlayer(Tl_Players[2].object3D.position, Tl_I, 0);
-          movePlayer(Tl_Players[3].object3D.position, Tl_J, 0);
-          movePlayer(Mcg_Players[0].object3D.position, Mcg_S, 0);
-          movePlayer(Mcg_Players[1].object3D.position, Mcg_E, 0);
-          movePlayer(Mcg_Players[2].object3D.position, Mcg_9, 0);
-          movePlayer(Mcg_Players[3].object3D.position, Mcg_L, 0);
+          document.body.addEventListener("keydown", function(event) {
+            //Press H
+            if (event.keyCode == 72) {
+              movePlayer(Day_Players[0].object3D.position, Day_F, 0);
+              movePlayer(Day_Players[1].object3D.position, Day_N, 0);
+              movePlayer(Day_Players[2].object3D.position, Day_P, 0);
+              movePlayer(Day_Players[3].object3D.position, Day_V, 0);
+              movePlayer(Oath_Players[0].object3D.position, Oath_R, 0);
+              movePlayer(Oath_Players[1].object3D.position, Oath_P, 0);
+              movePlayer(Oath_Players[2].object3D.position, Oath_S, 0);
+              movePlayer(Oath_Players[3].object3D.position, Oath_B, 0);
+              movePlayer(Tl_Players[0].object3D.position, Tl_C, 0);
+              movePlayer(Tl_Players[1].object3D.position, Tl_M, 0);
+              movePlayer(Tl_Players[2].object3D.position, Tl_I, 0);
+              movePlayer(Tl_Players[3].object3D.position, Tl_J, 0);
+              movePlayer(Mcg_Players[0].object3D.position, Mcg_S, 0);
+              movePlayer(Mcg_Players[1].object3D.position, Mcg_E, 0);
+              movePlayer(Mcg_Players[2].object3D.position, Mcg_9, 0);
+              movePlayer(Mcg_Players[3].object3D.position, Mcg_L, 0);
+            }
+          });
 
           function movePlayer(positionToTween, who, incr) {
-            if(incr < who.length-1) {
+            if (incr < who.length - 1) {
               let newDuration = (who[incr].duration * .001) + .1;
               TweenMax.to(positionToTween, newDuration, {
                 x: who[incr + 1].location.x / mult,
                 y: who[incr + 1].location.z / mult,
                 z: who[incr + 1].location.y / mult,
                 onComplete: movePlayer,
-                onCompleteParams: [positionToTween, who, incr+1],
-                ease: Linear.easeNone
+                onCompleteParams: [positionToTween, who, incr + 1],
               });
             } else {
               console.log(who[0].name + ' died or end of json');
