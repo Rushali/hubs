@@ -66,6 +66,7 @@
     ]
   },
   "dependencies": {
+    "gsap": "^3.6.1",
     "@braintree/sanitize-url": "^5.0.0",
     "@formatjs/intl-locale": "^2.4.13",
     "@formatjs/intl-pluralrules": "^4.0.3",
