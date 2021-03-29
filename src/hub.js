@@ -1346,6 +1346,9 @@ document.addEventListener("DOMContentLoaded", async () => {
           document.body.addEventListener("keydown", function(event) {
             //Press H
             if (event.keyCode == 72) {
+              
+              console.log("initiate movement of players");
+
               if(Day_Players, Oath_Players, Tl_Players, Mcg_Players) {
                 movePlayer(Day_Players[0].object3D.position, Day_F, 0);
                 movePlayer(Day_Players[1].object3D.position, Day_N, 0);
@@ -1477,10 +1480,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       //722440116198440962 is Luis Hubs id
       //686570245938216994 Local test IDD
 
-      if (hubIDMonk == "4Gd9foX" && userIDMonk == "722440116198440962") {
-        alert("user is Luis :" + userIDMonk);
-        
-
+      if (userIDMonk == "722440116198440962") {
+        console.log("user is Luis :" + userIDMonk);
         canMoveThings = true;
 
       }
