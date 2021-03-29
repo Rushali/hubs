@@ -1346,22 +1346,26 @@ document.addEventListener("DOMContentLoaded", async () => {
           document.body.addEventListener("keydown", function(event) {
             //Press H
             if (event.keyCode == 72) {
-              movePlayer(Day_Players[0].object3D.position, Day_F, 0);
-              movePlayer(Day_Players[1].object3D.position, Day_N, 0);
-              movePlayer(Day_Players[2].object3D.position, Day_P, 0);
-              movePlayer(Day_Players[3].object3D.position, Day_V, 0);
-              movePlayer(Oath_Players[0].object3D.position, Oath_R, 0);
-              movePlayer(Oath_Players[1].object3D.position, Oath_P, 0);
-              movePlayer(Oath_Players[2].object3D.position, Oath_S, 0);
-              movePlayer(Oath_Players[3].object3D.position, Oath_B, 0);
-              movePlayer(Tl_Players[0].object3D.position, Tl_C, 0);
-              movePlayer(Tl_Players[1].object3D.position, Tl_M, 0);
-              movePlayer(Tl_Players[2].object3D.position, Tl_I, 0);
-              movePlayer(Tl_Players[3].object3D.position, Tl_J, 0);
-              movePlayer(Mcg_Players[0].object3D.position, Mcg_S, 0);
-              movePlayer(Mcg_Players[1].object3D.position, Mcg_E, 0);
-              movePlayer(Mcg_Players[2].object3D.position, Mcg_9, 0);
-              movePlayer(Mcg_Players[3].object3D.position, Mcg_L, 0);
+              if(Day_Players, Oath_Players, Tl_Players, Mcg_Players) {
+                movePlayer(Day_Players[0].object3D.position, Day_F, 0);
+                movePlayer(Day_Players[1].object3D.position, Day_N, 0);
+                movePlayer(Day_Players[2].object3D.position, Day_P, 0);
+                movePlayer(Day_Players[3].object3D.position, Day_V, 0);
+                movePlayer(Oath_Players[0].object3D.position, Oath_R, 0);
+                movePlayer(Oath_Players[1].object3D.position, Oath_P, 0);
+                movePlayer(Oath_Players[2].object3D.position, Oath_S, 0);
+                movePlayer(Oath_Players[3].object3D.position, Oath_B, 0);
+                movePlayer(Tl_Players[0].object3D.position, Tl_C, 0);
+                movePlayer(Tl_Players[1].object3D.position, Tl_M, 0);
+                movePlayer(Tl_Players[2].object3D.position, Tl_I, 0);
+                movePlayer(Tl_Players[3].object3D.position, Tl_J, 0);
+                movePlayer(Mcg_Players[0].object3D.position, Mcg_S, 0);
+                movePlayer(Mcg_Players[1].object3D.position, Mcg_E, 0);
+                movePlayer(Mcg_Players[2].object3D.position, Mcg_9, 0);
+                movePlayer(Mcg_Players[3].object3D.position, Mcg_L, 0);
+              } else {
+                console.log('teams array is empty')
+              }
             }
           });
 
