@@ -1288,7 +1288,6 @@ document.addEventListener("DOMContentLoaded", async () => {
           }
 
           Day_Players.forEach((item, i) => {
-            console.log("ID-->" + item.id);
             if (i == 0) {
               item.object3D.position.set(Day_F[0].location.x / mult, Day_F[0].location.z / mult, Day_F[0].location.y / mult);
             } else if (i == 1) {
@@ -1302,7 +1301,6 @@ document.addEventListener("DOMContentLoaded", async () => {
           });
 
           Oath_Players.forEach((item, i) => {
-            console.log("ID-->" + item.id);
             if (i == 0) {
               item.object3D.position.set(Oath_R[0].location.x / mult, Oath_R[0].location.z / mult, Oath_R[0].location.y / mult);
             } else if (i == 1) {
@@ -1316,7 +1314,6 @@ document.addEventListener("DOMContentLoaded", async () => {
           });
 
           Tl_Players.forEach((item, i) => {
-            console.log("ID-->" + item.id);
             if (i == 0) {
               item.object3D.position.set(Tl_C[0].location.x / mult, Tl_C[0].location.z / mult, Tl_C[0].location.y / mult);
             } else if (i == 1) {
@@ -1330,7 +1327,6 @@ document.addEventListener("DOMContentLoaded", async () => {
           });
 
           Mcg_Players.forEach((item, i) => {
-            console.log("ID-->" + item.id);
             if (i == 0) {
               item.object3D.position.set(Mcg_S[0].location.x / mult, Mcg_S[0].location.z / mult, Mcg_S[0].location.y / mult);
             } else if (i == 1) {
@@ -1342,46 +1338,35 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
             item.object3D.scale.set(reScaleFactor, reScaleFactor, reScaleFactor);
           });
-          let incr = 0;
-          movePlayer(Day_Players[0].object3D.position, Day_F);
-          movePlayer(Day_Players[1].object3D.position, Day_N);
-          movePlayer(Day_Players[2].object3D.position, Day_P);
-          movePlayer(Day_Players[3].object3D.position, Day_V);
-          movePlayer(Oath_Players[0].object3D.position, Oath_R);
-          movePlayer(Oath_Players[1].object3D.position, Oath_P);
-          movePlayer(Oath_Players[2].object3D.position, Oath_S);
-          movePlayer(Oath_Players[3].object3D.position, Oath_B);
-          movePlayer(Tl_Players[0].object3D.position, Tl_C);
-          movePlayer(Tl_Players[1].object3D.position, Tl_M);
-          movePlayer(Tl_Players[2].object3D.position, Tl_I);
-          movePlayer(Tl_Players[3].object3D.position, Tl_J);
-          movePlayer(Mcg_Players[0].object3D.position, Mcg_S);
-          movePlayer(Mcg_Players[1].object3D.position, Mcg_E);
-          movePlayer(Mcg_Players[2].object3D.position, Mcg_9);
-          movePlayer(Mcg_Players[3].object3D.position, Mcg_L);
 
-          function movePlayer(positionToTween, who) {
-            if (who && who.length > 0) {
-              // if(who[incr] && who[incr+1]) {
-              //   // console.log('incr and incr+1' + incr+1)
-              // }
-              var newDuration = (who[incr].duration * .001) + .1;
-              TweenMax.to(positionToTween, newDuration, {
-                x: who[incr + 1].location.x / mult,
-                y: who[incr + 1].location.z / mult,
-                z: who[incr + 1].location.y / mult,
-                onComplete: movePlayer,
-                onCompleteParams: [positionToTween, who],
-                ease: Linear.easeNone
-              });
-              //console.log("newDuration is " + newDuration + ' for ' + who[0].name);
-              if (incr < who.length-1) {
-                incr += 1;
-              } else {
-                console.log('end of json')
-                incr = 0;
-              }
-            }
+          movePlayer(Day_Players[0].object3D.position, Day_F, 0);
+          movePlayer(Day_Players[1].object3D.position, Day_N, 0);
+          movePlayer(Day_Players[2].object3D.position, Day_P, 0);
+          movePlayer(Day_Players[3].object3D.position, Day_V, 0);
+          movePlayer(Oath_Players[0].object3D.position, Oath_R, 0);
+          movePlayer(Oath_Players[1].object3D.position, Oath_P, 0);
+          movePlayer(Oath_Players[2].object3D.position, Oath_S, 0);
+          movePlayer(Oath_Players[3].object3D.position, Oath_B, 0);
+          movePlayer(Tl_Players[0].object3D.position, Tl_C, 0);
+          movePlayer(Tl_Players[1].object3D.position, Tl_M, 0);
+          movePlayer(Tl_Players[2].object3D.position, Tl_I, 0);
+          movePlayer(Tl_Players[3].object3D.position, Tl_J, 0);
+          movePlayer(Mcg_Players[0].object3D.position, Mcg_S, 0);
+          movePlayer(Mcg_Players[1].object3D.position, Mcg_E, 0);
+          movePlayer(Mcg_Players[2].object3D.position, Mcg_9, 0);
+          movePlayer(Mcg_Players[3].object3D.position, Mcg_L, 0);
+
+          function movePlayer(positionToTween, who, incr) {
+            let newDuration = (who[incr].duration * .001) + .1;
+            TweenMax.to(positionToTween, newDuration, {
+              x: who[incr + 1].location.x / mult,
+              y: who[incr + 1].location.z / mult,
+              z: who[incr + 1].location.y / mult,
+              onComplete: movePlayer,
+              onCompleteParams: [positionToTween, who, incr+1],
+              ease: Linear.easeNone
+            });
+            console.log(incr, who[0].name);
           }
         }, 3000);
 
