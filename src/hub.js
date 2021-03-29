@@ -1357,16 +1357,19 @@ document.addEventListener("DOMContentLoaded", async () => {
           movePlayer(Mcg_Players[3].object3D.position, Mcg_L, 0);
 
           function movePlayer(positionToTween, who, incr) {
-            let newDuration = (who[incr].duration * .001) + .1;
-            TweenMax.to(positionToTween, newDuration, {
-              x: who[incr + 1].location.x / mult,
-              y: who[incr + 1].location.z / mult,
-              z: who[incr + 1].location.y / mult,
-              onComplete: movePlayer,
-              onCompleteParams: [positionToTween, who, incr+1],
-              ease: Linear.easeNone
-            });
-            console.log(incr, who[0].name);
+            if(incr < who.length-1) {
+              let newDuration = (who[incr].duration * .001) + .1;
+              TweenMax.to(positionToTween, newDuration, {
+                x: who[incr + 1].location.x / mult,
+                y: who[incr + 1].location.z / mult,
+                z: who[incr + 1].location.y / mult,
+                onComplete: movePlayer,
+                onCompleteParams: [positionToTween, who, incr+1],
+                ease: Linear.easeNone
+              });
+            } else {
+              console.log(who[0].name + ' died or end of json');
+            }
           }
         }, 3000);
 
