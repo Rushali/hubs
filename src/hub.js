@@ -1270,11 +1270,14 @@ document.addEventListener("DOMContentLoaded", async () => {
           let Tl_Players = [];
           let Mcg_Players = [];
 
+
+
           // const reScaleFactor = .75;
           // const mult = 150000;
 
           const reScaleFactor = .45;
           const mult = 0.000005;
+          const tableHeight = 0.65;
 
           let players = document.querySelectorAll("[gltf-model-plus][networked][id^=naf]");
           if (players.length == 16) {
@@ -1300,7 +1303,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               NAF.utils.isMine(networkedEl);
               NAF.utils.takeOwnership(networkedEl);
               networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
-              networkedEl.object3D.position.set(pos3DObj.x * mult, pos3DObj.z * mult, pos3DObj.y * mult);
+              networkedEl.object3D.position.set(pos3DObj.x * mult, tableHeight + (pos3DObj.z * mult), pos3DObj.y * mult);
             })
           }
 
@@ -1323,7 +1326,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             } else if (i == 3) {
               setInitialPos(item, Day_F[0].location);
             }
-            setInitialScale(item, reScaleFactor);
+            //setInitialScale(item, reScaleFactor);
           });
 
           Oath_Players.forEach((item, i) => {
@@ -1336,7 +1339,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             } else if (i == 3) {
               setInitialPos(item, Oath_R[0].location);
             }
-            setInitialScale(item, reScaleFactor);
+            //setInitialScale(item, reScaleFactor);
           });
 
           Tl_Players.forEach((item, i) => {
@@ -1349,7 +1352,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             } else if (i == 3) {
               setInitialPos(item, Tl_C[0].location);
             }
-            setInitialScale(item, reScaleFactor);
+            //setInitialScale(item, reScaleFactor);
           });
 
           Mcg_Players.forEach((item, i) => {
@@ -1362,7 +1365,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             } else if (i == 3) {
               setInitialPos(item, Mcg_S[0].location);
             }
-            setInitialScale(item, reScaleFactor);
+            //  setInitialScale(item, reScaleFactor);
           });
 
           document.body.addEventListener("keydown", function(event) {
@@ -1407,6 +1410,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               });
 
               who.forEach((state, i) => {
+
                 if (i > 0) {
                   let nextDuration = (who[i].duration) + 100;
                   animation.add({
@@ -1419,6 +1423,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 // else {
                 //   console.log(i + 'skipping first');
                 // }
+
               });
 
               animation.restart();
@@ -1519,9 +1524,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       //722440116198440962 is Luis Hubs id
       //686570245938216994 Local test IDD
 
-      // rushali id 930946248167392253
+      // rushali id 722440116198440962
 
-      if (userIDMonk == "930946248167392253") {
+      if (userIDMonk == "722440116198440962" ) {
         console.log("user is Luis :" + userIDMonk);
         canMoveThings = true;
 
