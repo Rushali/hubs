@@ -1241,7 +1241,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!scene.is("entered")) {
       setupLobbyCamera();
       ////BEGININNG OF INJECTED CODE
-      /*
+      
       if (canMoveThings) {
 
         setTimeout(function() {
@@ -1293,56 +1293,76 @@ document.addEventListener("DOMContentLoaded", async () => {
           
           console.log("initial player positioning");
 
+          function setInitialPos(item, pos3DObj){
+               NAF.utils.getNetworkedEntity(item).then(networkedEl => { 
+                  NAF.utils.isMine(networkedEl);
+                  NAF.utils.takeOwnership(networkedEl); 
+                  
+                  networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
+                  networkedEl.object3D.position.set(pos3DObj.x / mult, pos3DObj.z / mult, pos3DObj.y / mult);
+            })
+          }
+
+          function setInitialScale(item, scaleF){
+               NAF.utils.getNetworkedEntity(item).then(networkedEl => { 
+                  NAF.utils.isMine(networkedEl);
+                  NAF.utils.takeOwnership(networkedEl); 
+                  
+                  networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
+                  networkedEl.object3D.scale.set(scaleF, scaleF, scaleF);
+            })
+          }
+
           Day_Players.forEach((item, i) => {
             if (i == 0) {
-              item.object3D.position.set(Day_F[0].location.x / mult, Day_F[0].location.z / mult, Day_F[0].location.y / mult);
+              setInitialPos(item, Day_F[0].location);
             } else if (i == 1) {
-              item.object3D.position.set(Day_N[0].location.x / mult, Day_N[0].location.z / mult, Day_N[0].location.y / mult);
+             setInitialPos(item, Day_F[0].location);
             } else if (i == 2) {
-              item.object3D.position.set(Day_P[0].location.x / mult, Day_P[0].location.z / mult, Day_P[0].location.y / mult);
+              setInitialPos(item, Day_F[0].location);
             } else if (i == 3) {
-              item.object3D.position.set(Day_V[0].location.x / mult, Day_V[0].location.z / mult, Day_V[0].location.y / mult);
+              setInitialPos(item, Day_F[0].location);
             }
-            item.object3D.scale.set(reScaleFactor, reScaleFactor, reScaleFactor);
+            setInitialScale(item, reScaleFactor);
           });
 
           Oath_Players.forEach((item, i) => {
             if (i == 0) {
-              item.object3D.position.set(Oath_R[0].location.x / mult, Oath_R[0].location.z / mult, Oath_R[0].location.y / mult);
+              setInitialPos(item, Oath_R[0].location);
             } else if (i == 1) {
-              item.object3D.position.set(Oath_P[0].location.x / mult, Oath_P[0].location.z / mult, Oath_P[0].location.y / mult);
+              setInitialPos(item, Oath_R[0].location);
             } else if (i == 2) {
-              item.object3D.position.set(Oath_S[0].location.x / mult, Oath_S[0].location.z / mult, Oath_S[0].location.y / mult);
+              setInitialPos(item, Oath_R[0].location);
             } else if (i == 3) {
-              item.object3D.position.set(Oath_B[0].location.x / mult, Oath_B[0].location.z / mult, Oath_B[0].location.y / mult);
+              setInitialPos(item, Oath_R[0].location);
             }
-            item.object3D.scale.set(reScaleFactor, reScaleFactor, reScaleFactor);
+             setInitialScale(item, reScaleFactor);
           });
 
           Tl_Players.forEach((item, i) => {
             if (i == 0) {
-              item.object3D.position.set(Tl_C[0].location.x / mult, Tl_C[0].location.z / mult, Tl_C[0].location.y / mult);
+              setInitialPos(item, Tl_C[0].location);
             } else if (i == 1) {
-              item.object3D.position.set(Tl_M[0].location.x / mult, Tl_M[0].location.z / mult, Tl_M[0].location.y / mult);
+              setInitialPos(item, Tl_C[0].location);
             } else if (i == 2) {
-              item.object3D.position.set(Tl_I[0].location.x / mult, Tl_I[0].location.z / mult, Tl_I[0].location.y / mult);
+              setInitialPos(item, Tl_C[0].location);
             } else if (i == 3) {
-              item.object3D.position.set(Tl_J[0].location.x / mult, Tl_J[0].location.z / mult, Tl_J[0].location.y / mult);
+             setInitialPos(item, Tl_C[0].location);
             }
-            item.object3D.scale.set(reScaleFactor, reScaleFactor, reScaleFactor);
+            setInitialScale(item, reScaleFactor);
           });
 
           Mcg_Players.forEach((item, i) => {
             if (i == 0) {
-              item.object3D.position.set(Mcg_S[0].location.x / mult, Mcg_S[0].location.z / mult, Mcg_S[0].location.y / mult);
+              setInitialPos(item, Mcg_S[0].location);
             } else if (i == 1) {
-              item.object3D.position.set(Mcg_E[0].location.x / mult, Mcg_E[0].location.z / mult, Mcg_E[0].location.y / mult);
+               setInitialPos(item, Mcg_S[0].location);
             } else if (i == 2) {
-              item.object3D.position.set(Mcg_9[0].location.x / mult, Mcg_9[0].location.z / mult, Mcg_9[0].location.y / mult);
+              setInitialPos(item, Mcg_S[0].location);
             } else if (i == 3) {
-              item.object3D.position.set(Mcg_L[0].location.x / mult, Mcg_L[0].location.z / mult, Mcg_L[0].location.y / mult);
+               setInitialPos(item, Mcg_S[0].location);
             }
-            item.object3D.scale.set(reScaleFactor, reScaleFactor, reScaleFactor);
+            setInitialScale(item, reScaleFactor);
           });
 
           document.body.addEventListener("keydown", function(event) {
@@ -1352,38 +1372,65 @@ document.addEventListener("DOMContentLoaded", async () => {
               console.log("initiate movement of players");
 
               if(Day_Players, Oath_Players, Tl_Players, Mcg_Players) {
-                movePlayer(Day_Players[0].object3D.position, Day_F, 0);
-                movePlayer(Day_Players[1].object3D.position, Day_N, 0);
-                movePlayer(Day_Players[2].object3D.position, Day_P, 0);
-                movePlayer(Day_Players[3].object3D.position, Day_V, 0);
-                movePlayer(Oath_Players[0].object3D.position, Oath_R, 0);
-                movePlayer(Oath_Players[1].object3D.position, Oath_P, 0);
-                movePlayer(Oath_Players[2].object3D.position, Oath_S, 0);
-                movePlayer(Oath_Players[3].object3D.position, Oath_B, 0);
-                movePlayer(Tl_Players[0].object3D.position, Tl_C, 0);
-                movePlayer(Tl_Players[1].object3D.position, Tl_M, 0);
-                movePlayer(Tl_Players[2].object3D.position, Tl_I, 0);
-                movePlayer(Tl_Players[3].object3D.position, Tl_J, 0);
-                movePlayer(Mcg_Players[0].object3D.position, Mcg_S, 0);
-                movePlayer(Mcg_Players[1].object3D.position, Mcg_E, 0);
-                movePlayer(Mcg_Players[2].object3D.position, Mcg_9, 0);
-                movePlayer(Mcg_Players[3].object3D.position, Mcg_L, 0);
+                movePlayer(Day_Players[0], Day_F, 0);
+                movePlayer(Day_Players[1], Day_N, 0);
+                movePlayer(Day_Players[2], Day_P, 0);
+                movePlayer(Day_Players[3], Day_V, 0);
+                movePlayer(Oath_Players[0], Oath_R, 0);
+                movePlayer(Oath_Players[1], Oath_P, 0);
+                movePlayer(Oath_Players[2], Oath_S, 0);
+                movePlayer(Oath_Players[3], Oath_B, 0);
+                movePlayer(Tl_Players[0], Tl_C, 0);
+                movePlayer(Tl_Players[1], Tl_M, 0);
+                movePlayer(Tl_Players[2], Tl_I, 0);
+                movePlayer(Tl_Players[3], Tl_J, 0);
+                movePlayer(Mcg_Players[0], Mcg_S, 0);
+                movePlayer(Mcg_Players[1], Mcg_E, 0);
+                movePlayer(Mcg_Players[2], Mcg_9, 0);
+                movePlayer(Mcg_Players[3], Mcg_L, 0);
               } else {
                 console.log('teams array is empty')
               }
             }
           });
 
-          function movePlayer(positionToTween, who, incr) {
+          function movePlayer(item, who, incr) {
             if (incr < who.length - 1) {
               let newDuration = (who[incr].duration * .001) + .1;
-              TweenMax.to(positionToTween, newDuration, {
-                x: who[incr + 1].location.x / mult,
-                y: 1.5,//who[incr + 1].location.z / mult,
-                z: who[incr + 1].location.y / mult,
-                onComplete: movePlayer,
-                onCompleteParams: [positionToTween, who, incr + 1],
-              });
+              //
+               
+                  
+                  var positionToTween = item.object3D.position;
+
+
+                    /*CONVERT THIS TO AFRAME.ANIMATE & OWNERSHIP
+                    TweenMax.to(positionToTween, newDuration, {
+                      x: who[incr + 1].location.x / mult,
+                      y: 1.5,//who[incr + 1].location.z / mult,
+                      z: who[incr + 1].location.y / mult,
+                      onComplete: movePlayer,
+                      onCompleteParams: [item, who, incr + 1],
+                    });
+                     
+                    //WITH THIS :) 
+      
+                    NAF.utils.getNetworkedEntity(objectToMove).then(networkedEl => { 
+                          NAF.utils.isMine(networkedEl);
+                          NAF.utils.takeOwnership(networkedEl); 
+                          
+                          networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
+
+                          var objectToMove_pos = AFRAME.ANIME.default.timeline({targets:networkedEl.object3D.position, autoPlay:false, dur: 3400, easing: "easeInQuad"})
+                          console.log(objectToMove.object3D.position)
+
+                          objectToMove_pos.add({x:xpos0, y:1, z:zpos0})
+                          objectToMove_pos.restart() 
+                    })
+
+                    */
+
+
+                
             } else {
               console.log(who[0].name + ' died or end of json');
             }
@@ -1391,51 +1438,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         }, 3000);
 
       }
-      */
-      function randomIntFromInterval(min,max){
-          return Math.floor(Math.random()*(max-min+1)+min);
-      }
-
-      function randomFloatFromInterval(min,max){
-          return (Math.random()*(max-min+1)+min);
-      }
-
-      function moveRandomObject(){
-
-        //Mn {x: 3.9760804166666666, y: 1.0013866666666666, z: 1.769425}
-        
-
-        var objectInndex = randomIntFromInterval(0,5);
-
-        var xpos0 = randomFloatFromInterval(-3.0, 3.0)
-        var zpos0 = randomFloatFromInterval(-1.2, 1.2)
-
-        var players = document.querySelectorAll("[gltf-model-plus][networked]")
-        if(players != undefined){
-          var objectToMove = players[objectInndex]
-
-            NAF.utils.getNetworkedEntity(objectToMove).then(networkedEl => { 
-                  NAF.utils.isMine(networkedEl);
-                  NAF.utils.takeOwnership(networkedEl); 
-                  
-                  networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
-
-                  var objectToMove_pos = AFRAME.ANIME.default.timeline({targets:networkedEl.object3D.position, autoPlay:false, dur: 3400, easing: "easeInQuad"})
-                  console.log(objectToMove.object3D.position)
-
-                  objectToMove_pos.add({x:xpos0, y:1, z:zpos0})
-                  objectToMove_pos.restart() 
-            })
-
-         
-        }
-      }
-      if (canMoveThings) {
-        setInterval( moveRandomObject , 4000)
-      }
+     
+    
+      
+     
 
       /////END OF INJECTED CODE
     }
+
+
 
     // This will be run every time the environment is changed (including the first load.)
     remountUI({
