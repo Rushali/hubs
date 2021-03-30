@@ -1405,19 +1405,29 @@ document.addEventListener("DOMContentLoaded", async () => {
         //Mn {x: 3.9760804166666666, y: 1.0013866666666666, z: 1.769425}
         
 
-        var objectInndex = randomIntFromInterval(0,6);
+        var objectInndex = randomIntFromInterval(0,5);
 
-        var xpos0 = randomFloatFromInterval(-4.0, 4.0)
-        var zpos0 = randomFloatFromInterval(-1.7, 1.7)
+        var xpos0 = randomFloatFromInterval(-3.0, 3.0)
+        var zpos0 = randomFloatFromInterval(-1.2, 1.2)
 
         var players = document.querySelectorAll("[gltf-model-plus][networked]")
         if(players != undefined){
           var objectToMove = players[objectInndex]
-          var objectToMove_pos = AFRAME.ANIME.default.timeline({targets:objectToMove.object3D.position, autoPlay:false, dur: 3400, easing: "easeInQuad"})
-          console.log(objectToMove.object3D.position)
 
-          objectToMove_pos.add({x:xpos0, y:1, z:zpos0})
-          objectToMove_pos.restart() 
+            NAF.utils.getNetworkedEntity(objectToMove).then(networkedEl => { 
+                  NAF.utils.isMine(networkedEl);
+                  NAF.utils.takeOwnership(networkedEl); 
+                  
+                  networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
+
+                  var objectToMove_pos = AFRAME.ANIME.default.timeline({targets:networkedEl.object3D.position, autoPlay:false, dur: 3400, easing: "easeInQuad"})
+                  console.log(objectToMove.object3D.position)
+
+                  objectToMove_pos.add({x:xpos0, y:1, z:zpos0})
+                  objectToMove_pos.restart() 
+            })
+
+         
         }
       }
       if (canMoveThings) {
