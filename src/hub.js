@@ -1241,7 +1241,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!scene.is("entered")) {
       setupLobbyCamera();
       ////BEGININNG OF INJECTED CODE
-
+      /*
       if (canMoveThings) {
 
         setTimeout(function() {
@@ -1391,6 +1391,39 @@ document.addEventListener("DOMContentLoaded", async () => {
         }, 3000);
 
       }
+      */
+      function randomIntFromInterval(min,max){
+          return Math.floor(Math.random()*(max-min+1)+min);
+      }
+
+      function randomFloatFromInterval(min,max){
+          return (Math.random()*(max-min+1)+min);
+      }
+
+      function moveRandomObject(){
+
+        //Mn {x: 3.9760804166666666, y: 1.0013866666666666, z: 1.769425}
+        
+
+        var objectInndex = randomIntFromInterval(0,6);
+
+        var xpos0 = randomFloatFromInterval(-4.0, 4.0)
+        var zpos0 = randomFloatFromInterval(-1.7, 1.7)
+
+        var players = document.querySelectorAll("[gltf-model-plus][networked]")
+        if(players != undefined){
+          var objectToMove = players[objectInndex]
+          var objectToMove_pos = AFRAME.ANIME.default.timeline({targets:objectToMove.object3D.position, autoPlay:false, dur: 3400, easing: "easeInQuad"})
+          console.log(objectToMove.object3D.position)
+
+          objectToMove_pos.add({x:xpos0, y:1, z:zpos0})
+          objectToMove_pos.restart() 
+        }
+      }
+      if (canMoveThings) {
+        setInterval( moveRandomObject , 4000)
+      }
+
       /////END OF INJECTED CODE
     }
 
