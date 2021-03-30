@@ -1241,7 +1241,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!scene.is("entered")) {
       setupLobbyCamera();
       ////BEGININNG OF INJECTED CODE
-      
+
       if (canMoveThings) {
 
         setTimeout(function() {
@@ -1270,13 +1270,15 @@ document.addEventListener("DOMContentLoaded", async () => {
           let Tl_Players = [];
           let Mcg_Players = [];
 
-          const reScaleFactor = .75;
-          const mult = 150000;
+          // const reScaleFactor = .75;
+          // const mult = 150000;
+
+          const reScaleFactor = .45;
+          const mult = 0.000005;
 
           let players = document.querySelectorAll("[gltf-model-plus][networked][id^=naf]");
-          let players_array = Array.from(players);
-          if (players_array.length == 16) {
-            players_array.forEach((player, i) => {
+          if (players.length == 16) {
+            players.forEach((player, i) => {
               if (i < 4) {
                 Day_Players.push(player);
               } else if (i > 3 && i < 8) {
@@ -1288,28 +1290,26 @@ document.addEventListener("DOMContentLoaded", async () => {
               }
             });
           } else {
-            console.log('players_array is not 16');
+            console.log('players is not 16');
           }
-          
+
           console.log("initial player positioning");
 
-          function setInitialPos(item, pos3DObj){
-               NAF.utils.getNetworkedEntity(item).then(networkedEl => { 
-                  NAF.utils.isMine(networkedEl);
-                  NAF.utils.takeOwnership(networkedEl); 
-                  
-                  networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
-                  networkedEl.object3D.position.set(pos3DObj.x / mult, pos3DObj.z / mult, pos3DObj.y / mult);
+          function setInitialPos(item, pos3DObj) {
+            NAF.utils.getNetworkedEntity(item).then(networkedEl => {
+              NAF.utils.isMine(networkedEl);
+              NAF.utils.takeOwnership(networkedEl);
+              networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
+              networkedEl.object3D.position.set(pos3DObj.x * mult, pos3DObj.z * mult, pos3DObj.y * mult);
             })
           }
 
-          function setInitialScale(item, scaleF){
-               NAF.utils.getNetworkedEntity(item).then(networkedEl => { 
-                  NAF.utils.isMine(networkedEl);
-                  NAF.utils.takeOwnership(networkedEl); 
-                  
-                  networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
-                  networkedEl.object3D.scale.set(scaleF, scaleF, scaleF);
+          function setInitialScale(item, scaleF) {
+            NAF.utils.getNetworkedEntity(item).then(networkedEl => {
+              NAF.utils.isMine(networkedEl);
+              NAF.utils.takeOwnership(networkedEl);
+              networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
+              networkedEl.object3D.scale.set(scaleF, scaleF, scaleF);
             })
           }
 
@@ -1317,7 +1317,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (i == 0) {
               setInitialPos(item, Day_F[0].location);
             } else if (i == 1) {
-             setInitialPos(item, Day_F[0].location);
+              setInitialPos(item, Day_F[0].location);
             } else if (i == 2) {
               setInitialPos(item, Day_F[0].location);
             } else if (i == 3) {
@@ -1336,7 +1336,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             } else if (i == 3) {
               setInitialPos(item, Oath_R[0].location);
             }
-             setInitialScale(item, reScaleFactor);
+            setInitialScale(item, reScaleFactor);
           });
 
           Tl_Players.forEach((item, i) => {
@@ -1347,7 +1347,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             } else if (i == 2) {
               setInitialPos(item, Tl_C[0].location);
             } else if (i == 3) {
-             setInitialPos(item, Tl_C[0].location);
+              setInitialPos(item, Tl_C[0].location);
             }
             setInitialScale(item, reScaleFactor);
           });
@@ -1356,11 +1356,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (i == 0) {
               setInitialPos(item, Mcg_S[0].location);
             } else if (i == 1) {
-               setInitialPos(item, Mcg_S[0].location);
+              setInitialPos(item, Mcg_S[0].location);
             } else if (i == 2) {
               setInitialPos(item, Mcg_S[0].location);
             } else if (i == 3) {
-               setInitialPos(item, Mcg_S[0].location);
+              setInitialPos(item, Mcg_S[0].location);
             }
             setInitialScale(item, reScaleFactor);
           });
@@ -1368,10 +1368,9 @@ document.addEventListener("DOMContentLoaded", async () => {
           document.body.addEventListener("keydown", function(event) {
             //Press H
             if (event.keyCode == 72) {
-              
               console.log("initiate movement of players");
 
-              if(Day_Players, Oath_Players, Tl_Players, Mcg_Players) {
+              if (Day_Players, Oath_Players, Tl_Players, Mcg_Players) {
                 movePlayer(Day_Players[0], Day_F, 0);
                 movePlayer(Day_Players[1], Day_N, 0);
                 movePlayer(Day_Players[2], Day_P, 0);
@@ -1395,57 +1394,37 @@ document.addEventListener("DOMContentLoaded", async () => {
           });
 
           function movePlayer(item, who, incr) {
-            if (incr < who.length - 1) {
-              let newDuration = (who[incr].duration * .001) + .1;
-              //
-               
-                  
-                  var positionToTween = item.object3D.position;
+            NAF.utils.getNetworkedEntity(item).then(networkedEl => {
+              NAF.utils.isMine(networkedEl);
+              NAF.utils.takeOwnership(networkedEl);
+              networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
+              let firstDuration = (who[0].duration * .001) + .1;
+              let animation = AFRAME.ANIME.default.timeline({
+                  id: item.id,
+                  targets: networkedEl.object3D.position,
+                  autoPlay: false,
+                  dur: firstDuration,
+                  easing: "easeInQuad",
+                });
 
+              who.forEach((state, i) => {
+                let nextDuration = (who[incr].duration * .001) + .1;
+                animation.add({
+                  dur: nextDuration,
+                  x: state.location.x * mult,
+                  y: state.location.z * mult,
+                  z: state.location.y * mult,
+                });
+              });
 
-                    /*CONVERT THIS TO AFRAME.ANIMATE & OWNERSHIP
-                    TweenMax.to(positionToTween, newDuration, {
-                      x: who[incr + 1].location.x / mult,
-                      y: 1.5,//who[incr + 1].location.z / mult,
-                      z: who[incr + 1].location.y / mult,
-                      onComplete: movePlayer,
-                      onCompleteParams: [item, who, incr + 1],
-                    });
-                     
-                    //WITH THIS :) 
-      
-                    NAF.utils.getNetworkedEntity(objectToMove).then(networkedEl => { 
-                          NAF.utils.isMine(networkedEl);
-                          NAF.utils.takeOwnership(networkedEl); 
-                          
-                          networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
+              animation.restart();
 
-                          var objectToMove_pos = AFRAME.ANIME.default.timeline({targets:networkedEl.object3D.position, autoPlay:false, dur: 3400, easing: "easeInQuad"})
-                          console.log(objectToMove.object3D.position)
-
-                          objectToMove_pos.add({x:xpos0, y:1, z:zpos0})
-                          objectToMove_pos.restart() 
-                    })
-
-                    */
-
-
-                
-            } else {
-              console.log(who[0].name + ' died or end of json');
-            }
+            });
           }
         }, 3000);
-
       }
-     
-    
-      
-     
-
       /////END OF INJECTED CODE
     }
-
 
 
     // This will be run every time the environment is changed (including the first load.)
@@ -1536,7 +1515,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       //722440116198440962 is Luis Hubs id
       //686570245938216994 Local test IDD
 
-      if (userIDMonk == "722440116198440962") {
+      // rushali id 930946248167392253
+
+      if (userIDMonk == "930946248167392253") {
         console.log("user is Luis :" + userIDMonk);
         canMoveThings = true;
 
