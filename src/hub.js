@@ -1371,50 +1371,54 @@ document.addEventListener("DOMContentLoaded", async () => {
               console.log("initiate movement of players");
 
               if (Day_Players, Oath_Players, Tl_Players, Mcg_Players) {
-                movePlayer(Day_Players[0], Day_F, 0);
-                movePlayer(Day_Players[1], Day_N, 0);
-                movePlayer(Day_Players[2], Day_P, 0);
-                movePlayer(Day_Players[3], Day_V, 0);
-                movePlayer(Oath_Players[0], Oath_R, 0);
-                movePlayer(Oath_Players[1], Oath_P, 0);
-                movePlayer(Oath_Players[2], Oath_S, 0);
-                movePlayer(Oath_Players[3], Oath_B, 0);
-                movePlayer(Tl_Players[0], Tl_C, 0);
-                movePlayer(Tl_Players[1], Tl_M, 0);
-                movePlayer(Tl_Players[2], Tl_I, 0);
-                movePlayer(Tl_Players[3], Tl_J, 0);
-                movePlayer(Mcg_Players[0], Mcg_S, 0);
-                movePlayer(Mcg_Players[1], Mcg_E, 0);
-                movePlayer(Mcg_Players[2], Mcg_9, 0);
-                movePlayer(Mcg_Players[3], Mcg_L, 0);
+                movePlayer(Day_Players[0], Day_F);
+                movePlayer(Day_Players[1], Day_N);
+                movePlayer(Day_Players[2], Day_P);
+                movePlayer(Day_Players[3], Day_V);
+                movePlayer(Oath_Players[0], Oath_R);
+                movePlayer(Oath_Players[1], Oath_P);
+                movePlayer(Oath_Players[2], Oath_S);
+                movePlayer(Oath_Players[3], Oath_B);
+                movePlayer(Tl_Players[0], Tl_C);
+                movePlayer(Tl_Players[1], Tl_M);
+                movePlayer(Tl_Players[2], Tl_I);
+                movePlayer(Tl_Players[3], Tl_J);
+                movePlayer(Mcg_Players[0], Mcg_S);
+                movePlayer(Mcg_Players[1], Mcg_E);
+                movePlayer(Mcg_Players[2], Mcg_9);
+                movePlayer(Mcg_Players[3], Mcg_L);
               } else {
                 console.log('teams array is empty')
               }
             }
           });
 
-          function movePlayer(item, who, incr) {
+          function movePlayer(item, who) {
             NAF.utils.getNetworkedEntity(item).then(networkedEl => {
               NAF.utils.isMine(networkedEl);
               NAF.utils.takeOwnership(networkedEl);
               networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
-              let firstDuration = (who[0].duration * .001) + .1;
+              let firstDuration = (who[0].duration) + 100;
               let animation = AFRAME.ANIME.default.timeline({
-                  id: item.id,
-                  targets: networkedEl.object3D.position,
-                  autoPlay: false,
-                  dur: firstDuration,
-                  easing: "easeInQuad",
-                });
+                targets: networkedEl.object3D.position,
+                autoPlay: false,
+                dur: firstDuration,
+                easing: "easeInQuad",
+              });
 
               who.forEach((state, i) => {
-                let nextDuration = (who[incr].duration * .001) + .1;
-                animation.add({
-                  dur: nextDuration,
-                  x: state.location.x * mult,
-                  y: state.location.z * mult,
-                  z: state.location.y * mult,
-                });
+                if (i > 0) {
+                  let nextDuration = (who[i].duration) + 100;
+                  animation.add({
+                    dur: nextDuration,
+                    x: state.location.x * mult,
+                    y: state.location.z * mult,
+                    z: state.location.y * mult,
+                  });
+                }
+                // else {
+                //   console.log(i + 'skipping first');
+                // }
               });
 
               animation.restart();
