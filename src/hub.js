@@ -1243,25 +1243,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         ////BEGININNG OF INJECTED CODE
 
         if (canMoveThings) {
-          // const Day_F = DAY_Flash;
-          // const Day_N = DAY_Nourinz;
-          // const Day_P = DAY_PuuChiwz;
-          // const Day_V = DAY_vanOtica;
-          //
-          // const Oath_R = OATH_Relo;
-          // const Oath_P = OATH_PATKAPS;
-          // const Oath_S = OATH_Snakers;
-          // const Oath_B = OATH_Balefrost;
-          //
-          // const Tl_C = TL_clib;
-          // const Tl_M = TL_mxey;
-          // const Tl_I = TL_ibiza;
-          // const Tl_J = TL_jeemzz;
-          //
-          // const Mcg_S = MCG_Summer;
-          // const Mcg_E = MCG_EviLLee;
-          // const Mcg_9 = MCG_995iTank;
-          // const Mcg_L = MCG_LingDuuuuuu;
 
           let Day_Players = [];
           let Oath_Players = [];
@@ -1532,7 +1513,7 @@ const createHubChannelParams = permsToken => {
 
     // rushali id 930946248167392253
 
-    if (userIDMonk == "930946248167392253") {
+    if (userIDMonk == "722440116198440962") {
       console.log("user is Luis :" + userIDMonk);
       canMoveThings = true;
 
