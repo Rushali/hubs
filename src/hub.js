@@ -1371,28 +1371,39 @@ document.addEventListener("DOMContentLoaded", async () => {
           document.body.addEventListener("keydown", function(event) {
             //Press H
             if (event.keyCode == 72) {
-              console.log("initiate movement of players");
+              console.log("initiate movement of players and start video");
 
-              if (Day_Players, Oath_Players, Tl_Players, Mcg_Players) {
-                movePlayer(Day_Players[0], Day_F);
-                movePlayer(Day_Players[1], Day_N);
-                movePlayer(Day_Players[2], Day_P);
-                movePlayer(Day_Players[3], Day_V);
-                movePlayer(Oath_Players[0], Oath_R);
-                movePlayer(Oath_Players[1], Oath_P);
-                movePlayer(Oath_Players[2], Oath_S);
-                movePlayer(Oath_Players[3], Oath_B);
-                movePlayer(Tl_Players[0], Tl_C);
-                movePlayer(Tl_Players[1], Tl_M);
-                movePlayer(Tl_Players[2], Tl_I);
-                movePlayer(Tl_Players[3], Tl_J);
-                movePlayer(Mcg_Players[0], Mcg_S);
-                movePlayer(Mcg_Players[1], Mcg_E);
-                movePlayer(Mcg_Players[2], Mcg_9);
-                movePlayer(Mcg_Players[3], Mcg_L);
-              } else {
-                console.log('teams array is empty')
-              }
+              let video = document.querySelectorAll("[networked][id^=naf][media-video]")[0];
+
+              NAF.utils.getNetworkedEntity(video).then(networkedEl => {
+                NAF.utils.isMine(networkedEl);
+                NAF.utils.takeOwnership(networkedEl);
+                networkedEl.components["media-video"].togglePlaying();
+                console.log('video should start');
+              });
+
+              setTimeout(function() {
+                if (Day_Players, Oath_Players, Tl_Players, Mcg_Players) {
+                  movePlayer(Day_Players[0], Day_F);
+                  movePlayer(Day_Players[1], Day_N);
+                  movePlayer(Day_Players[2], Day_P);
+                  movePlayer(Day_Players[3], Day_V);
+                  movePlayer(Oath_Players[0], Oath_R);
+                  movePlayer(Oath_Players[1], Oath_P);
+                  movePlayer(Oath_Players[2], Oath_S);
+                  movePlayer(Oath_Players[3], Oath_B);
+                  movePlayer(Tl_Players[0], Tl_C);
+                  movePlayer(Tl_Players[1], Tl_M);
+                  movePlayer(Tl_Players[2], Tl_I);
+                  movePlayer(Tl_Players[3], Tl_J);
+                  movePlayer(Mcg_Players[0], Mcg_S);
+                  movePlayer(Mcg_Players[1], Mcg_E);
+                  movePlayer(Mcg_Players[2], Mcg_9);
+                  movePlayer(Mcg_Players[3], Mcg_L);
+                } else {
+                  console.log('teams array is empty')
+                }
+              }, 32000); // 32 seconds into video players jump off the flight
             }
           });
 
@@ -1524,7 +1535,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       //722440116198440962 is Luis Hubs id
       //686570245938216994 Local test IDD
 
-      // rushali id 722440116198440962
+      // rushali id 930946248167392253
 
       if (userIDMonk == "722440116198440962" ) {
         console.log("user is Luis :" + userIDMonk);
