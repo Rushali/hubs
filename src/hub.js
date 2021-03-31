@@ -1253,8 +1253,8 @@ document.addEventListener("DOMContentLoaded", async () => {
           // const mult = 150000;
 
           const reScaleFactor = .45;
-          const mult = 0.000005;
-          const tableHeight = 0.65;
+          const mult = 0.000005 * 3;
+          const tableHeight = 0.35 * 3;
 
           let players = document.querySelectorAll("[gltf-model-plus][networked][id^=naf]");
           if (players.length == 16 && players != undefined) {
@@ -1283,6 +1283,8 @@ document.addEventListener("DOMContentLoaded", async () => {
               networkedEl.object3D.position.set(pos3DObj.x * mult, tableHeight + (pos3DObj.z * mult), pos3DObj.y * mult);
             })
           }
+
+
 
           function setInitialScale(item, scaleF) {
             NAF.utils.getNetworkedEntity(item).then(networkedEl => {
@@ -1400,15 +1402,18 @@ document.addEventListener("DOMContentLoaded", async () => {
                 autoPlay: false,
                 dur: firstDuration,
                 easing: "linear",
+                complete: function(anim) {
+                      console.log("x-->" + networkedEl.object3D.position.x);
+                  }
               });
 
               who.forEach((state, i) => {
                 if (i > 0) {
-                  let nextDuration = (who[i].duration);
+                  let nextDuration = (who[i].duration) ;
                   animation.add({
                     dur: nextDuration,
                     x: state.location.x * mult,
-                    y: state.location.z * mult,
+                    y: tableHeight + (state.location.z * mult),
                     z: state.location.y * mult,
                   }, '+=100');
                 }
@@ -1416,7 +1421,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 //   console.log(i + 'skipping first');
                 // }
               });
-
+              //
               animation.play();
 
             });
