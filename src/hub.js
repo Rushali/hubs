@@ -1234,43 +1234,39 @@ document.addEventListener("DOMContentLoaded", async () => {
   environmentScene.addEventListener("model-loaded", onFirstEnvironmentLoad);
 
   environmentScene.addEventListener("model-loaded", ({
-    detail: {
-      model
-    }
-  }) => {
-    if (!scene.is("entered")) {
-      setupLobbyCamera();
-      ////BEGININNG OF INJECTED CODE
+      detail: {
+        model
+      }
+    }) => {
+      if (!scene.is("entered")) {
+        setupLobbyCamera();
+        ////BEGININNG OF INJECTED CODE
 
-      if (canMoveThings) {
-
-        setTimeout(function() {
-          const Day_F = DAY_Flash;
-          const Day_N = DAY_Nourinz;
-          const Day_P = DAY_PuuChiwz;
-          const Day_V = DAY_vanOtica;
-
-          const Oath_R = OATH_Relo;
-          const Oath_P = OATH_PATKAPS;
-          const Oath_S = OATH_Snakers;
-          const Oath_B = OATH_Balefrost;
-
-          const Tl_C = TL_clib;
-          const Tl_M = TL_mxey;
-          const Tl_I = TL_ibiza;
-          const Tl_J = TL_jeemzz;
-
-          const Mcg_S = MCG_Summer;
-          const Mcg_E = MCG_EviLLee;
-          const Mcg_9 = MCG_995iTank;
-          const Mcg_L = MCG_LingDuuuuuu;
+        if (canMoveThings) {
+          // const Day_F = DAY_Flash;
+          // const Day_N = DAY_Nourinz;
+          // const Day_P = DAY_PuuChiwz;
+          // const Day_V = DAY_vanOtica;
+          //
+          // const Oath_R = OATH_Relo;
+          // const Oath_P = OATH_PATKAPS;
+          // const Oath_S = OATH_Snakers;
+          // const Oath_B = OATH_Balefrost;
+          //
+          // const Tl_C = TL_clib;
+          // const Tl_M = TL_mxey;
+          // const Tl_I = TL_ibiza;
+          // const Tl_J = TL_jeemzz;
+          //
+          // const Mcg_S = MCG_Summer;
+          // const Mcg_E = MCG_EviLLee;
+          // const Mcg_9 = MCG_995iTank;
+          // const Mcg_L = MCG_LingDuuuuuu;
 
           let Day_Players = [];
           let Oath_Players = [];
           let Tl_Players = [];
           let Mcg_Players = [];
-
-
 
           // const reScaleFactor = .75;
           // const mult = 150000;
@@ -1280,7 +1276,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           const tableHeight = 0.65;
 
           let players = document.querySelectorAll("[gltf-model-plus][networked][id^=naf]");
-          if (players.length == 16) {
+          if (players.length == 16 && players != undefined) {
             players.forEach((player, i) => {
               if (i < 4) {
                 Day_Players.push(player);
@@ -1318,52 +1314,52 @@ document.addEventListener("DOMContentLoaded", async () => {
 
           Day_Players.forEach((item, i) => {
             if (i == 0) {
-              setInitialPos(item, Day_F[0].location);
+              setInitialPos(item, DAY_Flash[0].location);
             } else if (i == 1) {
-              setInitialPos(item, Day_F[0].location);
+              setInitialPos(item, DAY_Nourinz[0].location);
             } else if (i == 2) {
-              setInitialPos(item, Day_F[0].location);
+              setInitialPos(item, DAY_PuuChiwz[0].location);
             } else if (i == 3) {
-              setInitialPos(item, Day_F[0].location);
+              setInitialPos(item, DAY_vanOtica[0].location);
             }
             //setInitialScale(item, reScaleFactor);
           });
 
           Oath_Players.forEach((item, i) => {
             if (i == 0) {
-              setInitialPos(item, Oath_R[0].location);
+              setInitialPos(item, OATH_Relo[0].location);
             } else if (i == 1) {
-              setInitialPos(item, Oath_R[0].location);
+              setInitialPos(item, OATH_PATKAPS[0].location);
             } else if (i == 2) {
-              setInitialPos(item, Oath_R[0].location);
+              setInitialPos(item, OATH_Snakers[0].location);
             } else if (i == 3) {
-              setInitialPos(item, Oath_R[0].location);
+              setInitialPos(item, OATH_Balefrost[0].location);
             }
             //setInitialScale(item, reScaleFactor);
           });
 
           Tl_Players.forEach((item, i) => {
             if (i == 0) {
-              setInitialPos(item, Tl_C[0].location);
+              setInitialPos(item, TL_clib[0].location);
             } else if (i == 1) {
-              setInitialPos(item, Tl_C[0].location);
+              setInitialPos(item, TL_mxey[0].location);
             } else if (i == 2) {
-              setInitialPos(item, Tl_C[0].location);
+              setInitialPos(item, TL_ibiza[0].location);
             } else if (i == 3) {
-              setInitialPos(item, Tl_C[0].location);
+              setInitialPos(item, TL_jeemzz[0].location);
             }
             //setInitialScale(item, reScaleFactor);
           });
 
           Mcg_Players.forEach((item, i) => {
             if (i == 0) {
-              setInitialPos(item, Mcg_S[0].location);
+              setInitialPos(item, MCG_Summer[0].location);
             } else if (i == 1) {
-              setInitialPos(item, Mcg_S[0].location);
+              setInitialPos(item, MCG_EviLLee[0].location);
             } else if (i == 2) {
-              setInitialPos(item, Mcg_S[0].location);
+              setInitialPos(item, MCG_995iTank[0].location);
             } else if (i == 3) {
-              setInitialPos(item, Mcg_S[0].location);
+              setInitialPos(item, MCG_LingDuuuuuu[0].location);
             }
             //  setInitialScale(item, reScaleFactor);
           });
@@ -1375,31 +1371,36 @@ document.addEventListener("DOMContentLoaded", async () => {
 
               let video = document.querySelectorAll("[networked][id^=naf][media-video]")[0];
 
-              NAF.utils.getNetworkedEntity(video).then(networkedEl => {
-                NAF.utils.isMine(networkedEl);
-                NAF.utils.takeOwnership(networkedEl);
-                networkedEl.components["media-video"].togglePlaying();
-                console.log('video should start');
-              });
+              if (video != undefined) {
+                NAF.utils.getNetworkedEntity(video).then(networkedEl => {
+                  NAF.utils.isMine(networkedEl);
+                  NAF.utils.takeOwnership(networkedEl);
+                  networkedEl.components["media-video"].togglePlaying();
+                  console.log('video should start');
+                });
+              } else {
+                console.log('video was undefined');
+              }
 
               setTimeout(function() {
                 if (Day_Players, Oath_Players, Tl_Players, Mcg_Players) {
-                  movePlayer(Day_Players[0], Day_F);
-                  movePlayer(Day_Players[1], Day_N);
-                  movePlayer(Day_Players[2], Day_P);
-                  movePlayer(Day_Players[3], Day_V);
-                  movePlayer(Oath_Players[0], Oath_R);
-                  movePlayer(Oath_Players[1], Oath_P);
-                  movePlayer(Oath_Players[2], Oath_S);
-                  movePlayer(Oath_Players[3], Oath_B);
-                  movePlayer(Tl_Players[0], Tl_C);
-                  movePlayer(Tl_Players[1], Tl_M);
-                  movePlayer(Tl_Players[2], Tl_I);
-                  movePlayer(Tl_Players[3], Tl_J);
-                  movePlayer(Mcg_Players[0], Mcg_S);
-                  movePlayer(Mcg_Players[1], Mcg_E);
-                  movePlayer(Mcg_Players[2], Mcg_9);
-                  movePlayer(Mcg_Players[3], Mcg_L);
+                  movePlayer(Day_Players[0], DAY_Flash);
+                  movePlayer(Day_Players[1], DAY_Nourinz);
+                  movePlayer(Day_Players[2], DAY_PuuChiwz);
+                  movePlayer(Day_Players[3], DAY_vanOtica);
+                  movePlayer(Oath_Players[0], OATH_Relo);
+                  movePlayer(Oath_Players[1], OATH_PATKAPS);
+                  movePlayer(Oath_Players[2], OATH_Snakers);
+                  movePlayer(Oath_Players[3], OATH_Balefrost);
+                  movePlayer(Tl_Players[0], TL_clib);
+                  movePlayer(Tl_Players[1], TL_mxey);
+                  movePlayer(Tl_Players[2], TL_ibiza);
+                  movePlayer(Tl_Players[3], TL_jeemzz);
+                  movePlayer(Mcg_Players[0], MCG_Summer);
+                  movePlayer(Mcg_Players[1], MCG_EviLLee);
+                  movePlayer(Mcg_Players[2], MCG_995iTank);
+                  movePlayer(Mcg_Players[3], MCG_LingDuuuuuu);
+                  console.log('players should start moving');
                 } else {
                   console.log('teams array is empty')
                 }
@@ -1412,37 +1413,34 @@ document.addEventListener("DOMContentLoaded", async () => {
               NAF.utils.isMine(networkedEl);
               NAF.utils.takeOwnership(networkedEl);
               networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
-              let firstDuration = (who[0].duration) + 100;
+              let firstDuration = who[0].duration;
               let animation = AFRAME.ANIME.default.timeline({
                 targets: networkedEl.object3D.position,
                 autoPlay: false,
                 dur: firstDuration,
-                easing: "easeInQuad",
+                easing: "linear",
               });
 
               who.forEach((state, i) => {
-
                 if (i > 0) {
-                  let nextDuration = (who[i].duration) + 100;
+                  let nextDuration = (who[i].duration);
                   animation.add({
                     dur: nextDuration,
                     x: state.location.x * mult,
                     y: state.location.z * mult,
                     z: state.location.y * mult,
-                  });
+                  }, '+=100');
                 }
                 // else {
                 //   console.log(i + 'skipping first');
                 // }
-
               });
 
-              animation.restart();
+              animation.play();
 
             });
           }
-        }, 3000);
-      }
+        }
       /////END OF INJECTED CODE
     }
 
@@ -1450,8 +1448,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // This will be run every time the environment is changed (including the first load.)
     remountUI({
       environmentSceneLoaded: true
-    });
-    scene.emit("environment-scene-loaded", model);
+    }); scene.emit("environment-scene-loaded", model);
 
     // Re-bind the teleporter controls collision meshes in case the scene changed.
     document.querySelectorAll("a-entity[teleporter]").forEach(x => x.components["teleporter"].queryCollisionEntities());
@@ -1461,571 +1458,566 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  // Socket disconnects on refresh but we don't want to show exit scene in that scenario.
-  let isReloading = false;
-  window.addEventListener("beforeunload", () => (isReloading = true));
+// Socket disconnects on refresh but we don't want to show exit scene in that scenario.
+let isReloading = false; window.addEventListener("beforeunload", () => (isReloading = true));
 
-  const socket = await connectToReticulum(isDebug);
+const socket = await connectToReticulum(isDebug);
 
-  socket.onClose(e => {
-    // We don't currently have an easy way to distinguish between being kicked (server closes socket)
-    // and a letiety of other network issues that seem to produce the 1000 closure code, but the
-    // latter are probably more common. Either way, we just tell the user they got disconnected.
-    const NORMAL_CLOSURE = 1000;
+socket.onClose(e => {
+  // We don't currently have an easy way to distinguish between being kicked (server closes socket)
+  // and a letiety of other network issues that seem to produce the 1000 closure code, but the
+  // latter are probably more common. Either way, we just tell the user they got disconnected.
+  const NORMAL_CLOSURE = 1000;
 
-    if (e.code === NORMAL_CLOSURE && !isReloading) {
-      entryManager.exitScene();
-      remountUI({
-        roomUnavailableReason: ExitReason.disconnected
-      });
-    }
-  });
-
-  let retDeployReconnectInterval;
-  const retReconnectMaxDelayMs = 15000;
-
-  // Reticulum global channel
-  let retPhxChannel = socket.channel(`ret`, {
-    hub_id: hubId
-  });
-  retPhxChannel
-    .join()
-    .receive("ok", async data => subscriptions.setVapidPublicKey(data.vapid_public_key))
-    .receive("error", res => {
-      subscriptions.setVapidPublicKey(null);
-      console.error(res);
+  if (e.code === NORMAL_CLOSURE && !isReloading) {
+    entryManager.exitScene();
+    remountUI({
+      roomUnavailableReason: ExitReason.disconnected
     });
+  }
+});
 
-  const pushSubscriptionEndpoint = await subscriptions.getCurrentEndpoint();
+let retDeployReconnectInterval;
+const retReconnectMaxDelayMs = 15000;
 
-  const oauthFlowPermsToken = Cookies.get(OAUTH_FLOW_PERMS_TOKEN_KEY);
+// Reticulum global channel
+let retPhxChannel = socket.channel(`ret`, {
+  hub_id: hubId
+}); retPhxChannel
+.join()
+.receive("ok", async data => subscriptions.setVapidPublicKey(data.vapid_public_key))
+.receive("error", res => {
+  subscriptions.setVapidPublicKey(null);
+  console.error(res);
+});
 
-  if (oauthFlowPermsToken) {
-    Cookies.remove(OAUTH_FLOW_PERMS_TOKEN_KEY);
+const pushSubscriptionEndpoint = await subscriptions.getCurrentEndpoint();
+
+const oauthFlowPermsToken = Cookies.get(OAUTH_FLOW_PERMS_TOKEN_KEY);
+
+if (oauthFlowPermsToken) {
+  Cookies.remove(OAUTH_FLOW_PERMS_TOKEN_KEY);
+}
+
+const createHubChannelParams = permsToken => {
+  const params = {
+    profile: store.state.profile,
+    push_subscription_endpoint: pushSubscriptionEndpoint,
+    auth_token: null,
+    perms_token: null,
+    context: {
+      mobile: isMobile || isMobileVR,
+      embed: isEmbed
+    },
+    hub_invite_id: qs.get("hub_invite_id")
+  };
+
+  if (isMobileVR) {
+    params.context.hmd = true;
   }
 
-  const createHubChannelParams = permsToken => {
-    const params = {
-      profile: store.state.profile,
-      push_subscription_endpoint: pushSubscriptionEndpoint,
-      auth_token: null,
-      perms_token: null,
-      context: {
-        mobile: isMobile || isMobileVR,
-        embed: isEmbed
-      },
-      hub_invite_id: qs.get("hub_invite_id")
+  if (permsToken) {
+    params.perms_token = permsToken;
+  }
+
+  const {
+    token
+  } = store.state.credentials;
+  if (token) {
+    userIDMonk = store.credentialsAccountId;
+
+    //YkZCYTG is the id of the hUBS test.
+    //722440116198440962 is Luis Hubs id
+    //686570245938216994 Local test IDD
+
+    // rushali id 930946248167392253
+
+    if (userIDMonk == "930946248167392253") {
+      console.log("user is Luis :" + userIDMonk);
+      canMoveThings = true;
+
+    }
+    ///REMOVE ME BEFORE DEPLOY
+    console.log(`Logged into account ${store.credentialsAccountId}`);
+
+    params.auth_token = token;
+  }
+
+  return params;
+};
+
+const migrateToNewReticulumServer = async deployNotification => {
+  // On Reticulum deploys, reconnect after a random delay until pool + version match deployed version/pool
+  console.log(`Reticulum deploy detected v${deployNotification.ret_version} on ${deployNotification.ret_pool}`);
+  clearInterval(retDeployReconnectInterval);
+
+  setTimeout(() => {
+    const tryReconnect = async () => {
+      invalidateReticulumMeta();
+      const reticulumMeta = await getReticulumMeta();
+
+      if (
+        reticulumMeta.pool === deployNotification.ret_pool &&
+        reticulumMeta.version === deployNotification.ret_version
+      ) {
+        console.log("Reticulum reconnecting.");
+        clearInterval(retDeployReconnectInterval);
+        const oldSocket = retPhxChannel.socket;
+        const socket = await connectToReticulum(isDebug, oldSocket.params());
+        retPhxChannel = await migrateChannelToSocket(retPhxChannel, socket);
+        await hubChannel.migrateToSocket(socket, createHubChannelParams());
+        authChannel.setSocket(socket);
+        linkChannel.setSocket(socket);
+
+        // Disconnect old socket after a delay to ensure this user is always registered in presence.
+        setTimeout(() => {
+          console.log("Reconnection complete. Disconnecting old reticulum socket.");
+          oldSocket.teardown();
+        }, 10000);
+      }
     };
 
-    if (isMobileVR) {
-      params.context.hmd = true;
-    }
+    retDeployReconnectInterval = setInterval(tryReconnect, 5000);
+    tryReconnect();
+  }, Math.floor(Math.random() * retReconnectMaxDelayMs));
+};
 
-    if (permsToken) {
-      params.perms_token = permsToken;
-    }
+retPhxChannel.on("notice", async data => {
+  // On Reticulum deploys, reconnect after a random delay until pool + version match deployed version/pool
+  if (data.event === "ret-deploy") {
+    await migrateToNewReticulumServer(data);
+  }
+});
 
-    const {
-      token
-    } = store.state.credentials;
-    if (token) {
-      userIDMonk = store.credentialsAccountId;
+const hubPhxChannel = socket.channel(`hub:${hubId}`, createHubChannelParams(oauthFlowPermsToken));
 
-      //YkZCYTG is the id of the hUBS test.
-      //722440116198440962 is Luis Hubs id
-      //686570245938216994 Local test IDD
+const presenceLogEntries = [];
+const addToPresenceLog = entry => {
+  entry.key = Date.now().toString();
 
-      // rushali id 930946248167392253
-
-      if (userIDMonk == "722440116198440962" ) {
-        console.log("user is Luis :" + userIDMonk);
-        canMoveThings = true;
-
-      }
-      ///REMOVE ME BEFORE DEPLOY
-      console.log(`Logged into account ${store.credentialsAccountId}`);
-
-      params.auth_token = token;
-    }
-
-    return params;
-  };
-
-  const migrateToNewReticulumServer = async deployNotification => {
-    // On Reticulum deploys, reconnect after a random delay until pool + version match deployed version/pool
-    console.log(`Reticulum deploy detected v${deployNotification.ret_version} on ${deployNotification.ret_pool}`);
-    clearInterval(retDeployReconnectInterval);
-
-    setTimeout(() => {
-      const tryReconnect = async () => {
-        invalidateReticulumMeta();
-        const reticulumMeta = await getReticulumMeta();
-
-        if (
-          reticulumMeta.pool === deployNotification.ret_pool &&
-          reticulumMeta.version === deployNotification.ret_version
-        ) {
-          console.log("Reticulum reconnecting.");
-          clearInterval(retDeployReconnectInterval);
-          const oldSocket = retPhxChannel.socket;
-          const socket = await connectToReticulum(isDebug, oldSocket.params());
-          retPhxChannel = await migrateChannelToSocket(retPhxChannel, socket);
-          await hubChannel.migrateToSocket(socket, createHubChannelParams());
-          authChannel.setSocket(socket);
-          linkChannel.setSocket(socket);
-
-          // Disconnect old socket after a delay to ensure this user is always registered in presence.
-          setTimeout(() => {
-            console.log("Reconnection complete. Disconnecting old reticulum socket.");
-            oldSocket.teardown();
-          }, 10000);
-        }
-      };
-
-      retDeployReconnectInterval = setInterval(tryReconnect, 5000);
-      tryReconnect();
-    }, Math.floor(Math.random() * retReconnectMaxDelayMs));
-  };
-
-  retPhxChannel.on("notice", async data => {
-    // On Reticulum deploys, reconnect after a random delay until pool + version match deployed version/pool
-    if (data.event === "ret-deploy") {
-      await migrateToNewReticulumServer(data);
-    }
+  presenceLogEntries.push(entry);
+  remountUI({
+    presenceLogEntries
   });
+  if (entry.type === "chat" && scene.is("loaded")) {
 
-  const hubPhxChannel = socket.channel(`hub:${hubId}`, createHubChannelParams(oauthFlowPermsToken));
+    scene.systems["hubs-systems"].soundEffectsSystem.playSoundOneShot(SOUND_CHAT_MESSAGE);
+  }
 
-  const presenceLogEntries = [];
-  const addToPresenceLog = entry => {
-    entry.key = Date.now().toString();
-
-    presenceLogEntries.push(entry);
+  // Fade out and then remove
+  setTimeout(() => {
+    entry.expired = true;
     remountUI({
       presenceLogEntries
     });
-    if (entry.type === "chat" && scene.is("loaded")) {
 
-      scene.systems["hubs-systems"].soundEffectsSystem.playSoundOneShot(SOUND_CHAT_MESSAGE);
-    }
-
-    // Fade out and then remove
     setTimeout(() => {
-      entry.expired = true;
+      presenceLogEntries.splice(presenceLogEntries.indexOf(entry), 1);
       remountUI({
         presenceLogEntries
       });
+    }, 5000);
+  }, 20000);
+};
 
-      setTimeout(() => {
-        presenceLogEntries.splice(presenceLogEntries.indexOf(entry), 1);
-        remountUI({
-          presenceLogEntries
-        });
-      }, 5000);
-    }, 20000);
-  };
+const messageDispatch = new MessageDispatch(
+  scene,
+  entryManager,
+  hubChannel,
+  addToPresenceLog,
+  remountUI,
+  mediaSearchStore
+); document.getElementById("avatar-rig").messageDispatch = messageDispatch;
 
-  const messageDispatch = new MessageDispatch(
-    scene,
-    entryManager,
-    hubChannel,
-    addToPresenceLog,
-    remountUI,
-    mediaSearchStore
-  );
-  document.getElementById("avatar-rig").messageDispatch = messageDispatch;
+let isInitialJoin = true;
 
-  let isInitialJoin = true;
+// We need to be able to wait for initial presence syncs across reconnects and socket migrations,
+// so we create this object in the outer scope and assign it a new promise on channel join.
+const presenceSync = {
+  promise: null,
+  resolve: null
+};
 
-  // We need to be able to wait for initial presence syncs across reconnects and socket migrations,
-  // so we create this object in the outer scope and assign it a new promise on channel join.
-  const presenceSync = {
-    promise: null,
-    resolve: null
-  };
+hubChannel.setPhoenixChannel(hubPhxChannel);
 
-  hubChannel.setPhoenixChannel(hubPhxChannel);
+hubPhxChannel
+.join()
+.receive("ok", async data => {
+  socket.params().session_id = data.session_id;
+  socket.params().session_token = data.session_token;
 
-  hubPhxChannel
-    .join()
-    .receive("ok", async data => {
-      socket.params().session_id = data.session_id;
-      socket.params().session_token = data.session_token;
+  const vrHudPresenceCount = document.querySelector("#hud-presence-count");
 
-      const vrHudPresenceCount = document.querySelector("#hud-presence-count");
+  presenceSync.promise = new Promise(resolve => {
+    presenceSync.resolve = resolve;
+  });
 
-      presenceSync.promise = new Promise(resolve => {
-        presenceSync.resolve = resolve;
+  if (isInitialJoin) {
+    store.addEventListener("profilechanged", hubChannel.sendProfileUpdate.bind(hubChannel));
+
+    const requestedOccupants = [];
+
+    const requestOccupants = async (sessionIds, state) => {
+      requestedOccupants.length = 0;
+      for (let i = 0; i < sessionIds.length; i++) {
+        const sessionId = sessionIds[i];
+        if (sessionId !== NAF.clientId && state[sessionId].metas[0].presence === "room") {
+          requestedOccupants.push(sessionId);
+        }
+      }
+
+      while (!NAF.connection.isConnected()) await nextTick();
+      NAF.connection.adapter.syncOccupants(requestedOccupants);
+    };
+
+    hubChannel.presence.onSync(() => {
+      const presence = hubChannel.presence;
+
+      remountUI({
+        sessionId: socket.params().session_id,
+        presences: presence.state,
+        entryDisallowed: !hubChannel.canEnterRoom(uiProps.hub)
       });
 
-      if (isInitialJoin) {
-        store.addEventListener("profilechanged", hubChannel.sendProfileUpdate.bind(hubChannel));
+      const sessionIds = Object.getOwnPropertyNames(presence.state);
+      const occupantCount = sessionIds.length;
+      vrHudPresenceCount.setAttribute("text", "value", occupantCount.toString());
 
-        const requestedOccupants = [];
+      if (occupantCount > 1) {
+        scene.addState("copresent");
+      } else {
+        scene.removeState("copresent");
+      }
 
-        const requestOccupants = async (sessionIds, state) => {
-          requestedOccupants.length = 0;
-          for (let i = 0; i < sessionIds.length; i++) {
-            const sessionId = sessionIds[i];
-            if (sessionId !== NAF.clientId && state[sessionId].metas[0].presence === "room") {
-              requestedOccupants.push(sessionId);
-            }
-          }
+      requestOccupants(sessionIds, presence.state);
 
-          while (!NAF.connection.isConnected()) await nextTick();
-          NAF.connection.adapter.syncOccupants(requestedOccupants);
-        };
+      // HACK - Set a flag on the presence object indicating if the initial sync has completed,
+      // which is used to determine if we should fire join/leave messages into the presence log.
+      // This flag is required since we reuse these onJoin and onLeave handler functions on
+      // socket migrations.
+      presence.__hadInitialSync = true;
 
-        hubChannel.presence.onSync(() => {
-          const presence = hubChannel.presence;
+      presenceSync.resolve();
 
-          remountUI({
-            sessionId: socket.params().session_id,
-            presences: presence.state,
-            entryDisallowed: !hubChannel.canEnterRoom(uiProps.hub)
-          });
+      presence.onJoin((sessionId, current, info) => {
+        // Ignore presence join/leaves if this Presence has not yet had its initial sync (o/w the user
+        // will see join messages for every user.)
+        if (!hubChannel.presence.__hadInitialSync) return;
 
-          const sessionIds = Object.getOwnPropertyNames(presence.state);
-          const occupantCount = sessionIds.length;
-          vrHudPresenceCount.setAttribute("text", "value", occupantCount.toString());
+        const meta = info.metas[info.metas.length - 1];
+        const occupantCount = Object.entries(hubChannel.presence.state).length;
 
-          if (occupantCount > 1) {
-            scene.addState("copresent");
-          } else {
-            scene.removeState("copresent");
-          }
+        if (occupantCount <= NOISY_OCCUPANT_COUNT) {
+          if (current) {
+            // Change to existing presence
+            const isSelf = sessionId === socket.params().session_id;
+            const currentMeta = current.metas[0];
 
-          requestOccupants(sessionIds, presence.state);
-
-          // HACK - Set a flag on the presence object indicating if the initial sync has completed,
-          // which is used to determine if we should fire join/leave messages into the presence log.
-          // This flag is required since we reuse these onJoin and onLeave handler functions on
-          // socket migrations.
-          presence.__hadInitialSync = true;
-
-          presenceSync.resolve();
-
-          presence.onJoin((sessionId, current, info) => {
-            // Ignore presence join/leaves if this Presence has not yet had its initial sync (o/w the user
-            // will see join messages for every user.)
-            if (!hubChannel.presence.__hadInitialSync) return;
-
-            const meta = info.metas[info.metas.length - 1];
-            const occupantCount = Object.entries(hubChannel.presence.state).length;
-
-            if (occupantCount <= NOISY_OCCUPANT_COUNT) {
-              if (current) {
-                // Change to existing presence
-                const isSelf = sessionId === socket.params().session_id;
-                const currentMeta = current.metas[0];
-
-                if (
-                  !isSelf &&
-                  currentMeta.presence !== meta.presence &&
-                  meta.presence === "room" &&
-                  meta.profile.displayName
-                ) {
-                  messageDispatch.receive({
-                    type: "entered",
-                    presence: meta.presence,
-                    name: meta.profile.displayName
-                  });
-                }
-
-                if (
-                  currentMeta.profile &&
-                  meta.profile &&
-                  currentMeta.profile.displayName !== meta.profile.displayName
-                ) {
-                  messageDispatch.receive({
-                    type: "display_name_changed",
-                    oldName: currentMeta.profile.displayName,
-                    newName: meta.profile.displayName
-                  });
-                }
-              } else if (info.metas.length === 1) {
-                // New presence
-                const meta = info.metas[0];
-
-                if (meta.presence && meta.profile.displayName) {
-                  messageDispatch.receive({
-                    type: "join",
-                    presence: meta.presence,
-                    name: meta.profile.displayName
-                  });
-                }
-              }
-            }
-
-            scene.emit("presence_updated", {
-              sessionId,
-              profile: meta.profile,
-              roles: meta.roles,
-              permissions: meta.permissions,
-              streaming: meta.streaming,
-              recording: meta.recording
-            });
-          });
-
-          presence.onLeave((sessionId, current, info) => {
-            // Ignore presence join/leaves if this Presence has not yet had its initial sync
-            if (!hubChannel.presence.__hadInitialSync) return;
-
-            if (current && current.metas.length > 0) return;
-            const occupantCount = Object.entries(hubChannel.presence.state).length;
-            if (occupantCount > NOISY_OCCUPANT_COUNT) return;
-
-            const meta = info.metas[0];
-
-            if (meta.profile.displayName) {
+            if (
+              !isSelf &&
+              currentMeta.presence !== meta.presence &&
+              meta.presence === "room" &&
+              meta.profile.displayName
+            ) {
               messageDispatch.receive({
-                type: "leave",
+                type: "entered",
+                presence: meta.presence,
                 name: meta.profile.displayName
               });
             }
-          });
-        });
-      }
 
-      isInitialJoin = false;
-
-      const permsToken = oauthFlowPermsToken || data.perms_token;
-      hubChannel.setPermissionsFromToken(permsToken);
-
-      scene.addEventListener("adapter-ready", async ({
-        detail: adapter
-      }) => {
-        // HUGE HACK Safari does not like it if the first peer seen does not immediately
-        // send audio over its media stream. Otherwise, the stream doesn't work and stays
-        // silent. (Though subsequent peers work fine.) This only affects naf janus adapter
-        // not mediasoup.
-        //
-        // This hooks up a simple audio pipeline to push a short tone over the WebRTC
-        // media stream as its created to mitigate this Safari bug.
-        //
-        // Users will never hear this tone -- the outgoing media track is overwritten
-        // before we spawn our avatar, which is when other users will begin hearing
-        // the audio.
-        //
-        // This only covers the case where a Safari user is in the room and the first
-        // other user joins. If a user is in the room and Safari user joins,
-        // then Safari can fail to receive audio from a single peer (it does not seem
-        // to be related to silence, but may be a factor.)
-        let track, oscillator, stream;
-
-        // TODO remove after dialog
-        if (adapter.type !== "dialog") {
-          console.log("Using Janus SFU");
-          const ctx = THREE.AudioContext.getContext();
-          oscillator = ctx.createOscillator();
-          const gain = ctx.createGain();
-          gain.gain.setValueAtTime(0.01, ctx.currentTime);
-          const dest = ctx.createMediaStreamDestination();
-          oscillator.connect(gain);
-          gain.connect(dest);
-          oscillator.start();
-          const stream = dest.stream;
-          track = stream.getAudioTracks()[0];
-        }
-
-        adapter.setClientId(socket.params().session_id);
-        adapter.setJoinToken(data.perms_token);
-        setupPeerConnectionConfig(adapter);
-
-        hubChannel.addEventListener("permissions-refreshed", e => adapter.setJoinToken(e.detail.permsToken));
-
-        // Stop the tone after we've connected, which seems to mitigate the issue without actually
-        // having to keep this playing and using bandwidth.
-        scene.addEventListener(
-          "didConnectToNetworkedScene",
-          () => {
-            if (oscillator) {
-              oscillator.stop();
+            if (
+              currentMeta.profile &&
+              meta.profile &&
+              currentMeta.profile.displayName !== meta.profile.displayName
+            ) {
+              messageDispatch.receive({
+                type: "display_name_changed",
+                oldName: currentMeta.profile.displayName,
+                newName: meta.profile.displayName
+              });
             }
+          } else if (info.metas.length === 1) {
+            // New presence
+            const meta = info.metas[0];
 
-            if (track) {
-              track.enabled = false;
+            if (meta.presence && meta.profile.displayName) {
+              messageDispatch.receive({
+                type: "join",
+                presence: meta.presence,
+                name: meta.profile.displayName
+              });
             }
-          }, {
-            once: true
           }
-        );
+        }
 
-        if (stream) {
-          await adapter.setLocalMediaStream(stream);
+        scene.emit("presence_updated", {
+          sessionId,
+          profile: meta.profile,
+          roles: meta.roles,
+          permissions: meta.permissions,
+          streaming: meta.streaming,
+          recording: meta.recording
+        });
+      });
+
+      presence.onLeave((sessionId, current, info) => {
+        // Ignore presence join/leaves if this Presence has not yet had its initial sync
+        if (!hubChannel.presence.__hadInitialSync) return;
+
+        if (current && current.metas.length > 0) return;
+        const occupantCount = Object.entries(hubChannel.presence.state).length;
+        if (occupantCount > NOISY_OCCUPANT_COUNT) return;
+
+        const meta = info.metas[0];
+
+        if (meta.profile.displayName) {
+          messageDispatch.receive({
+            type: "leave",
+            name: meta.profile.displayName
+          });
         }
       });
-
-      subscriptions.setHubChannel(hubChannel);
-      subscriptions.setSubscribed(data.subscriptions.web_push);
-
-      remountUI({
-        hubIsBound: data.hub_requires_oauth,
-        initialIsFavorited: data.subscriptions.favorites,
-        initialIsSubscribed: subscriptions.isSubscribed()
-      });
-
-      await presenceSync.promise;
-
-      handleHubChannelJoined(entryManager, hubChannel, messageDispatch, data);
-    })
-    .receive("error", res => {
-      if (res.reason === "closed") {
-        entryManager.exitScene();
-        remountUI({
-          roomUnavailableReason: ExitReason.closed
-        });
-      } else if (res.reason === "oauth_required") {
-        entryManager.exitScene();
-        remountUI({
-          oauthInfo: res.oauth_info,
-          showOAuthScreen: true
-        });
-      } else if (res.reason === "join_denied") {
-        entryManager.exitScene();
-        remountUI({
-          roomUnavailableReason: ExitReason.denied
-        });
-      }
-
-      console.error(res);
     });
+  }
 
-  const handleIncomingNAF = data => {
-    if (!NAF.connection.adapter) return;
+  isInitialJoin = false;
 
-    NAF.connection.adapter.onData(authorizeOrSanitizeMessage(data), PHOENIX_RELIABLE_NAF);
+  const permsToken = oauthFlowPermsToken || data.perms_token;
+  hubChannel.setPermissionsFromToken(permsToken);
+
+  scene.addEventListener("adapter-ready", async ({
+    detail: adapter
+  }) => {
+    // HUGE HACK Safari does not like it if the first peer seen does not immediately
+    // send audio over its media stream. Otherwise, the stream doesn't work and stays
+    // silent. (Though subsequent peers work fine.) This only affects naf janus adapter
+    // not mediasoup.
+    //
+    // This hooks up a simple audio pipeline to push a short tone over the WebRTC
+    // media stream as its created to mitigate this Safari bug.
+    //
+    // Users will never hear this tone -- the outgoing media track is overwritten
+    // before we spawn our avatar, which is when other users will begin hearing
+    // the audio.
+    //
+    // This only covers the case where a Safari user is in the room and the first
+    // other user joins. If a user is in the room and Safari user joins,
+    // then Safari can fail to receive audio from a single peer (it does not seem
+    // to be related to silence, but may be a factor.)
+    let track, oscillator, stream;
+
+    // TODO remove after dialog
+    if (adapter.type !== "dialog") {
+      console.log("Using Janus SFU");
+      const ctx = THREE.AudioContext.getContext();
+      oscillator = ctx.createOscillator();
+      const gain = ctx.createGain();
+      gain.gain.setValueAtTime(0.01, ctx.currentTime);
+      const dest = ctx.createMediaStreamDestination();
+      oscillator.connect(gain);
+      gain.connect(dest);
+      oscillator.start();
+      const stream = dest.stream;
+      track = stream.getAudioTracks()[0];
+    }
+
+    adapter.setClientId(socket.params().session_id);
+    adapter.setJoinToken(data.perms_token);
+    setupPeerConnectionConfig(adapter);
+
+    hubChannel.addEventListener("permissions-refreshed", e => adapter.setJoinToken(e.detail.permsToken));
+
+    // Stop the tone after we've connected, which seems to mitigate the issue without actually
+    // having to keep this playing and using bandwidth.
+    scene.addEventListener(
+      "didConnectToNetworkedScene",
+      () => {
+        if (oscillator) {
+          oscillator.stop();
+        }
+
+        if (track) {
+          track.enabled = false;
+        }
+      }, {
+        once: true
+      }
+    );
+
+    if (stream) {
+      await adapter.setLocalMediaStream(stream);
+    }
+  });
+
+  subscriptions.setHubChannel(hubChannel);
+  subscriptions.setSubscribed(data.subscriptions.web_push);
+
+  remountUI({
+    hubIsBound: data.hub_requires_oauth,
+    initialIsFavorited: data.subscriptions.favorites,
+    initialIsSubscribed: subscriptions.isSubscribed()
+  });
+
+  await presenceSync.promise;
+
+  handleHubChannelJoined(entryManager, hubChannel, messageDispatch, data);
+})
+.receive("error", res => {
+  if (res.reason === "closed") {
+    entryManager.exitScene();
+    remountUI({
+      roomUnavailableReason: ExitReason.closed
+    });
+  } else if (res.reason === "oauth_required") {
+    entryManager.exitScene();
+    remountUI({
+      oauthInfo: res.oauth_info,
+      showOAuthScreen: true
+    });
+  } else if (res.reason === "join_denied") {
+    entryManager.exitScene();
+    remountUI({
+      roomUnavailableReason: ExitReason.denied
+    });
+  }
+
+  console.error(res);
+});
+
+const handleIncomingNAF = data => {
+  if (!NAF.connection.adapter) return;
+
+  NAF.connection.adapter.onData(authorizeOrSanitizeMessage(data), PHOENIX_RELIABLE_NAF);
+};
+
+hubPhxChannel.on("naf", data => handleIncomingNAF(data)); hubPhxChannel.on("nafr", ({
+  from_session_id,
+  naf: unparsedData
+}) => {
+  // Server optimization: server passes through unparsed NAF message, we must now parse it.
+  const data = JSON.parse(unparsedData);
+  data.from_session_id = from_session_id;
+  handleIncomingNAF(data);
+});
+
+hubPhxChannel.on("message", ({
+  session_id,
+  type,
+  body,
+  from
+}) => {
+  const getAuthor = () => {
+    const userInfo = hubChannel.presence.state[session_id];
+
+    if (from) {
+      return from;
+    } else if (userInfo) {
+      return userInfo.metas[0].profile.displayName;
+    } else {
+      return "Mystery user";
+    }
   };
 
-  hubPhxChannel.on("naf", data => handleIncomingNAF(data));
-  hubPhxChannel.on("nafr", ({
-    from_session_id,
-    naf: unparsedData
-  }) => {
-    // Server optimization: server passes through unparsed NAF message, we must now parse it.
-    const data = JSON.parse(unparsedData);
-    data.from_session_id = from_session_id;
-    handleIncomingNAF(data);
-  });
+  const name = getAuthor();
+  const maySpawn = scene.is("entered");
 
-  hubPhxChannel.on("message", ({
-    session_id,
+  const incomingMessage = {
+    name,
     type,
     body,
-    from
-  }) => {
-    const getAuthor = () => {
-      const userInfo = hubChannel.presence.state[session_id];
+    maySpawn,
+    sessionId: session_id,
+    sent: session_id === socket.params().session_id
+  };
 
-      if (from) {
-        return from;
-      } else if (userInfo) {
-        return userInfo.metas[0].profile.displayName;
-      } else {
-        return "Mystery user";
-      }
-    };
+  if (scene.is("vr-mode")) {
+    createInWorldLogMessage(incomingMessage);
+  }
 
-    const name = getAuthor();
-    const maySpawn = scene.is("entered");
+  messageDispatch.receive(incomingMessage);
+});
 
-    const incomingMessage = {
-      name,
-      type,
-      body,
-      maySpawn,
-      sessionId: session_id,
-      sent: session_id === socket.params().session_id
-    };
+hubPhxChannel.on("hub_refresh", ({
+  session_id,
+  hubs,
+  stale_fields
+}) => {
+  const hub = hubs[0];
+  const userInfo = hubChannel.presence.state[session_id];
+  const displayName = (userInfo && userInfo.metas[0].profile.displayName) || "API";
 
-    if (scene.is("vr-mode")) {
-      createInWorldLogMessage(incomingMessage);
-    }
+  window.APP.hub = hub;
+  updateUIForHub(hub, hubChannel);
 
-    messageDispatch.receive(incomingMessage);
-  });
+  if (
+    stale_fields.includes("scene") ||
+    stale_fields.includes("scene_listing") ||
+    stale_fields.includes("default_environment_gltf_bundle_url")
+  ) {
+    const fader = document.getElementById("viewing-camera").components["fader"];
 
-  hubPhxChannel.on("hub_refresh", ({
-    session_id,
-    hubs,
-    stale_fields
-  }) => {
-    const hub = hubs[0];
-    const userInfo = hubChannel.presence.state[session_id];
-    const displayName = (userInfo && userInfo.metas[0].profile.displayName) || "API";
-
-    window.APP.hub = hub;
-    updateUIForHub(hub, hubChannel);
-
-    if (
-      stale_fields.includes("scene") ||
-      stale_fields.includes("scene_listing") ||
-      stale_fields.includes("default_environment_gltf_bundle_url")
-    ) {
-      const fader = document.getElementById("viewing-camera").components["fader"];
-
-      fader.fadeOut().then(() => {
-        scene.emit("reset_scene");
-        updateEnvironmentForHub(hub, entryManager);
-      });
-
-      messageDispatch.receive({
-        type: "scene_changed",
-        name: displayName,
-        sceneName: hub.scene ? hub.scene.name : "a custom URL"
-      });
-    }
-
-    if (stale_fields.includes("member_permissions")) {
-      hubChannel.fetchPermissions();
-    }
-
-    if (stale_fields.includes("name")) {
-      const titleParts = document.title.split(" | "); // Assumes title has | trailing site name
-      titleParts[0] = hub.name;
-      document.title = titleParts.join(" | ");
-
-      // Re-write the slug in the browser history
-      const pathParts = history.location.pathname.split("/");
-      const oldSlug = pathParts[1];
-      const {
-        search,
-        state
-      } = history.location;
-      const pathname = history.location.pathname.replace(`/${oldSlug}`, `/${hub.slug}`);
-
-      history.replace({
-        pathname,
-        search,
-        state
-      });
-
-      messageDispatch.receive({
-        type: "hub_name_changed",
-        name: displayName,
-        hubName: hub.name
-      });
-    }
-
-    if (hub.entry_mode === "deny") {
-      scene.emit("hub_closed");
-    }
-
-    scene.emit("hub_updated", {
-      hub
+    fader.fadeOut().then(() => {
+      scene.emit("reset_scene");
+      updateEnvironmentForHub(hub, entryManager);
     });
+
+    messageDispatch.receive({
+      type: "scene_changed",
+      name: displayName,
+      sceneName: hub.scene ? hub.scene.name : "a custom URL"
+    });
+  }
+
+  if (stale_fields.includes("member_permissions")) {
+    hubChannel.fetchPermissions();
+  }
+
+  if (stale_fields.includes("name")) {
+    const titleParts = document.title.split(" | "); // Assumes title has | trailing site name
+    titleParts[0] = hub.name;
+    document.title = titleParts.join(" | ");
+
+    // Re-write the slug in the browser history
+    const pathParts = history.location.pathname.split("/");
+    const oldSlug = pathParts[1];
+    const {
+      search,
+      state
+    } = history.location;
+    const pathname = history.location.pathname.replace(`/${oldSlug}`, `/${hub.slug}`);
+
+    history.replace({
+      pathname,
+      search,
+      state
+    });
+
+    messageDispatch.receive({
+      type: "hub_name_changed",
+      name: displayName,
+      hubName: hub.name
+    });
+  }
+
+  if (hub.entry_mode === "deny") {
+    scene.emit("hub_closed");
+  }
+
+  scene.emit("hub_updated", {
+    hub
   });
+});
 
-  hubPhxChannel.on("permissions_updated", () => hubChannel.fetchPermissions());
+hubPhxChannel.on("permissions_updated", () => hubChannel.fetchPermissions());
 
-  hubPhxChannel.on("mute", ({
-    session_id
-  }) => {
-    if (session_id === NAF.clientId && !scene.is("muted")) {
-      scene.emit("action_mute");
-    }
-  });
+hubPhxChannel.on("mute", ({
+  session_id
+}) => {
+  if (session_id === NAF.clientId && !scene.is("muted")) {
+    scene.emit("action_mute");
+  }
+});
 
-  authChannel.setSocket(socket);
-  linkChannel.setSocket(socket);
+authChannel.setSocket(socket); linkChannel.setSocket(socket);
 });
