@@ -1280,11 +1280,10 @@ document.addEventListener("DOMContentLoaded", async () => {
             NAF.utils.isMine(networkedEl);
             NAF.utils.takeOwnership(networkedEl);
             networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
+            networkedEl.object3D.rotation.set(0, 0, 0);
             networkedEl.object3D.position.set(pos3DObj.x * mult, tableHeight + (pos3DObj.z * mult), pos3DObj.y * mult);
-          })
+          });
         }
-
-
 
         function setInitialScale(item, scaleF) {
           NAF.utils.getNetworkedEntity(item).then(networkedEl => {
@@ -1368,21 +1367,21 @@ document.addEventListener("DOMContentLoaded", async () => {
             setTimeout(function() {
               if (Day_Players, Oath_Players, Tl_Players, Mcg_Players) {
                 movePlayer(Day_Players[0], DAY_Flash);
-                // movePlayer(Day_Players[1], DAY_Nourinz);
-                // movePlayer(Day_Players[2], DAY_PuuChiwz);
-                // movePlayer(Day_Players[3], DAY_vanOtica);
-                // movePlayer(Oath_Players[0], OATH_Relo);
-                // movePlayer(Oath_Players[1], OATH_PATKAPS);
-                // movePlayer(Oath_Players[2], OATH_Snakers);
-                // movePlayer(Oath_Players[3], OATH_Balefrost);
-                // movePlayer(Tl_Players[0], TL_clib);
-                // movePlayer(Tl_Players[1], TL_mxey);
-                // movePlayer(Tl_Players[2], TL_ibiza);
-                // movePlayer(Tl_Players[3], TL_jeemzz);
-                // movePlayer(Mcg_Players[0], MCG_Summer);
-                // movePlayer(Mcg_Players[1], MCG_EviLLee);
-                // movePlayer(Mcg_Players[2], MCG_995iTank);
-                // movePlayer(Mcg_Players[3], MCG_LingDuuuuuu);
+                movePlayer(Day_Players[1], DAY_Nourinz);
+                movePlayer(Day_Players[2], DAY_PuuChiwz);
+                movePlayer(Day_Players[3], DAY_vanOtica);
+                movePlayer(Oath_Players[0], OATH_Relo);
+                movePlayer(Oath_Players[1], OATH_PATKAPS);
+                movePlayer(Oath_Players[2], OATH_Snakers);
+                movePlayer(Oath_Players[3], OATH_Balefrost);
+                movePlayer(Tl_Players[0], TL_clib);
+                movePlayer(Tl_Players[1], TL_mxey);
+                movePlayer(Tl_Players[2], TL_ibiza);
+                movePlayer(Tl_Players[3], TL_jeemzz);
+                movePlayer(Mcg_Players[0], MCG_Summer);
+                movePlayer(Mcg_Players[1], MCG_EviLLee);
+                movePlayer(Mcg_Players[2], MCG_995iTank);
+                movePlayer(Mcg_Players[3], MCG_LingDuuuuuu);
                 console.log('players should start moving');
               } else {
                 console.log('teams array is empty')
@@ -1402,24 +1401,26 @@ document.addEventListener("DOMContentLoaded", async () => {
               easing: "linear",
               // duration: who[0].duration,
             });
-            who.forEach((state, i) => {
-              if (i > 0) {
+            for (var i = 1; i < who.length; ++i) {
+
+              var xPos = who[i].location.x * mult;
+              var yPos = (who[i].location.z * mult) + tableHeight;
+              var zPos = who[i].location.y * mult;
+
+              //console.log(who[i - 1].duration);
+
+              if (who[i - 1].duration > 0) {
                 animation.add({
-                  duration: who[i].duration,
-                  x: state.location.x * mult,
-                  y: tableHeight + (state.location.z * mult),
-                  z: state.location.y * mult,
+                  duration: who[i - 1].duration, //randomIntFromInterval(10, 30) * 10,
+                  x: xPos,
+                  y: yPos,
+                  z: zPos,
                   complete: function(anim) {
-                    console.log(state.location.x + ' x axis');
-                    console.log(state.location.y + ' y axis');
-                    console.log(who[i].duration + ' duration');
+                    //console.log('completed :' + i)
                   }
-                });
+                })
               }
-              // else {
-              //   console.log(i + 'skipping first');
-              // }
-            });
+            }
 
             animation.play();
 
@@ -1520,7 +1521,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       // rushali id 930946248167392253
 
-      if (userIDMonk == "722440116198440962") {
+      if (userIDMonk == "930946248167392253") {
         console.log("user is Luis :" + userIDMonk);
         canMoveThings = true;
 
