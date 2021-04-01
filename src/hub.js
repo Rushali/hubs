@@ -1249,12 +1249,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         let Tl_Players = [];
         let Mcg_Players = [];
 
-        const reScaleFactor = .75;
+        const reScaleFactor = 2;
         //const mult = 1500;
 
         // const reScaleFactor = .45;
-        const mult = 0.000005 * 1;
-        const tableHeight = 0.35 * 1;
+        const mult = 0.0000125 * 1;
+        const tableHeight = 0.25 * 1; 
 
         let players = document.querySelectorAll("[gltf-model-plus][networked][id^=naf]");
         if (players.length == 16 && players != undefined) {
@@ -1291,6 +1291,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             NAF.utils.takeOwnership(networkedEl);
             networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
             networkedEl.object3D.scale.set(scaleF, scaleF, scaleF);
+            networkedEl.object3D.rotation.set(0, 0, 0);
           })
         }
 
@@ -1304,7 +1305,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           } else if (i == 3) {
             setInitialPos(item, DAY_vanOtica[0].location);
           }
-          //setInitialScale(item, reScaleFactor);
+          setInitialScale(item, reScaleFactor);
         });
 
         Oath_Players.forEach((item, i) => {
@@ -1317,7 +1318,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           } else if (i == 3) {
             setInitialPos(item, OATH_Balefrost[0].location);
           }
-          //setInitialScale(item, reScaleFactor);
+          setInitialScale(item, reScaleFactor);
         });
 
         Tl_Players.forEach((item, i) => {
@@ -1330,7 +1331,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           } else if (i == 3) {
             setInitialPos(item, TL_jeemzz[0].location);
           }
-          //setInitialScale(item, reScaleFactor);
+          setInitialScale(item, reScaleFactor);
         });
 
         Mcg_Players.forEach((item, i) => {
@@ -1343,7 +1344,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           } else if (i == 3) {
             setInitialPos(item, MCG_LingDuuuuuu[0].location);
           }
-          //  setInitialScale(item, reScaleFactor);
+          setInitialScale(item, reScaleFactor);
         });
 
         document.body.addEventListener("keydown", function(event) {
@@ -1521,7 +1522,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       // rushali id 930946248167392253
 
-      if (userIDMonk == "930946248167392253") {
+      if (userIDMonk == "722440116198440962") {
         console.log("user is Luis :" + userIDMonk);
         canMoveThings = true;
 
