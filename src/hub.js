@@ -241,7 +241,7 @@ window.APP.RENDER_ORDER = {
 let userIDMonk = "0";
 let hubIDMonk = "0";
 
-let canMoveThings = false;
+let isOwner = false;
 
 const store = window.APP.store;
 store.update({
@@ -938,18 +938,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     physicsSystem.setDebug(isDebug || physicsSystem.debug);
     patchThreeAllocations();
 
-
-
-
-    //
-
   };
 
   if (scene.hasLoaded) {
     onSceneLoaded();
-
-
-
   } else {
     scene.addEventListener("loaded", onSceneLoaded, {
       once: true
@@ -1240,196 +1232,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }) => {
     if (!scene.is("entered")) {
       setupLobbyCamera();
-      ////BEGININNG OF INJECTED CODE
-
-      if (canMoveThings) {
-
-        let Day_Players = [];
-        let Oath_Players = [];
-        let Tl_Players = [];
-        let Mcg_Players = [];
-
-        const reScaleFactor = 2;
-        //const mult = 1500;
-
-        // const reScaleFactor = .45;
-        const mult = 0.000012 * 1;
-        const tableHeight = 0.25 * 1; 
-
-        let players = document.querySelectorAll("[gltf-model-plus][networked][id^=naf]");
-        if (players.length == 16 && players != undefined) {
-          players.forEach((player, i) => {
-            if (i < 4) {
-              Day_Players.push(player);
-            } else if (i > 3 && i < 8) {
-              Oath_Players.push(player);
-            } else if (i > 7 && i < 12) {
-              Tl_Players.push(player)
-            } else if (i > 11 && i < 16) {
-              Mcg_Players.push(player)
-            }
-          });
-        } else {
-          console.log('players is not 16');
-        }
-
-        console.log("initial player positioning");
-
-        function setInitialPos(item, pos3DObj) {
-          NAF.utils.getNetworkedEntity(item).then(networkedEl => {
-            NAF.utils.isMine(networkedEl);
-            NAF.utils.takeOwnership(networkedEl);
-            networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
-            networkedEl.object3D.rotation.set(0, 0, 0);
-            networkedEl.object3D.position.set(pos3DObj.x * mult, tableHeight + (pos3DObj.z * mult), pos3DObj.y * mult);
-          });
-        }
-
-        function setInitialScale(item, scaleF) {
-          NAF.utils.getNetworkedEntity(item).then(networkedEl => {
-            NAF.utils.isMine(networkedEl);
-            NAF.utils.takeOwnership(networkedEl);
-            networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
-            networkedEl.object3D.scale.set(scaleF, scaleF, scaleF);
-          })
-        }
-
-        Day_Players.forEach((item, i) => {
-          if (i == 0) {
-            setInitialPos(item, DAY_Flash[0].location);
-          } else if (i == 1) {
-            setInitialPos(item, DAY_Nourinz[0].location);
-          } else if (i == 2) {
-            setInitialPos(item, DAY_PuuChiwz[0].location);
-          } else if (i == 3) {
-            setInitialPos(item, DAY_vanOtica[0].location);
-          }
-          setInitialScale(item, reScaleFactor);
-        });
-
-        Oath_Players.forEach((item, i) => {
-          if (i == 0) {
-            setInitialPos(item, OATH_Relo[0].location);
-          } else if (i == 1) {
-            setInitialPos(item, OATH_PATKAPS[0].location);
-          } else if (i == 2) {
-            setInitialPos(item, OATH_Snakers[0].location);
-          } else if (i == 3) {
-            setInitialPos(item, OATH_Balefrost[0].location);
-          }
-          setInitialScale(item, reScaleFactor);
-        });
-
-        Tl_Players.forEach((item, i) => {
-          if (i == 0) {
-            setInitialPos(item, TL_clib[0].location);
-          } else if (i == 1) {
-            setInitialPos(item, TL_mxey[0].location);
-          } else if (i == 2) {
-            setInitialPos(item, TL_ibiza[0].location);
-          } else if (i == 3) {
-            setInitialPos(item, TL_jeemzz[0].location);
-          }
-          setInitialScale(item, reScaleFactor);
-        });
-
-        Mcg_Players.forEach((item, i) => {
-          if (i == 0) {
-            setInitialPos(item, MCG_Summer[0].location);
-          } else if (i == 1) {
-            setInitialPos(item, MCG_EviLLee[0].location);
-          } else if (i == 2) {
-            setInitialPos(item, MCG_995iTank[0].location);
-          } else if (i == 3) {
-            setInitialPos(item, MCG_LingDuuuuuu[0].location);
-          }
-          setInitialScale(item, reScaleFactor);
-        });
-
-        document.body.addEventListener("keydown", function(event) {
-          //Press H
-          if (event.keyCode == 72) {
-            console.log("initiate movement of players and start video");
-
-            let video = document.querySelectorAll("[networked][id^=naf][media-video]")[0];
-
-            if (video != undefined) {
-              NAF.utils.getNetworkedEntity(video).then(networkedEl => {
-                NAF.utils.isMine(networkedEl);
-                NAF.utils.takeOwnership(networkedEl);
-                networkedEl.components["media-video"].togglePlaying();
-                console.log('video should start');
-              });
-            } else {
-              console.log('video was undefined');
-            }
-
-            setTimeout(function() {
-              if (Day_Players, Oath_Players, Tl_Players, Mcg_Players) {
-                movePlayer(Day_Players[0], DAY_Flash);
-                movePlayer(Day_Players[1], DAY_Nourinz);
-                movePlayer(Day_Players[2], DAY_PuuChiwz);
-                movePlayer(Day_Players[3], DAY_vanOtica);
-                movePlayer(Oath_Players[0], OATH_Relo);
-                movePlayer(Oath_Players[1], OATH_PATKAPS);
-                movePlayer(Oath_Players[2], OATH_Snakers);
-                movePlayer(Oath_Players[3], OATH_Balefrost);
-                movePlayer(Tl_Players[0], TL_clib);
-                movePlayer(Tl_Players[1], TL_mxey);
-                movePlayer(Tl_Players[2], TL_ibiza);
-                movePlayer(Tl_Players[3], TL_jeemzz);
-                movePlayer(Mcg_Players[0], MCG_Summer);
-                movePlayer(Mcg_Players[1], MCG_EviLLee);
-                movePlayer(Mcg_Players[2], MCG_995iTank);
-                movePlayer(Mcg_Players[3], MCG_LingDuuuuuu);
-                console.log('players should start moving');
-              } else {
-                console.log('teams array is empty')
-              }
-            }, 32000); // 32 seconds into video players jump off the flight
-          }
-        });
-
-        function movePlayer(item, who) {
-          NAF.utils.getNetworkedEntity(item).then(networkedEl => {
-            NAF.utils.isMine(networkedEl);
-            NAF.utils.takeOwnership(networkedEl);
-            networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
-            let animation = AFRAME.ANIME.default.timeline({
-              targets: networkedEl.object3D.position,
-              autoPlay: false,
-              easing: "linear",
-              // duration: who[0].duration,
-            });
-            for (var i = 1; i < who.length; ++i) {
-
-              var xPos = who[i].location.x * mult;
-              var yPos = (who[i].location.z * mult) + tableHeight;
-              var zPos = who[i].location.y * mult;
-
-              //console.log(who[i - 1].duration);
-
-              if (who[i - 1].duration > 0) {
-                animation.add({
-                  duration: who[i - 1].duration, //randomIntFromInterval(10, 30) * 10,
-                  x: xPos,
-                  y: yPos,
-                  z: zPos,
-                  complete: function(anim) {
-                    //console.log('completed :' + i)
-                  }
-                })
-              }
-            }
-
-            animation.play();
-
-          });
-        }
-      }
-      /////END OF INJECTED CODE
     }
-
 
     // This will be run every time the environment is changed (including the first load.)
     remountUI({
@@ -1518,14 +1321,212 @@ document.addEventListener("DOMContentLoaded", async () => {
       //YkZCYTG is the id of the hUBS test.
       //722440116198440962 is Luis Hubs id
       //686570245938216994 Local test IDD
-
       // rushali id 930946248167392253
 
       if (userIDMonk == "722440116198440962") {
         console.log("user is Luis :" + userIDMonk);
-        canMoveThings = true;
-
+        isOwner = true;
+        //canMoveThings = true;
       }
+
+      document.body.addEventListener("keydown", function(event) {
+        //Press O to take ownership of networked objects
+        if (event.keyCode == 79) {
+          isOwner = true;
+          console.log('You are now the owner: ' + isOwner);
+          ownerTakesOver();
+        }
+      });
+
+      function ownerTakesOver() {
+
+        let Day_Players = [];
+        let Oath_Players = [];
+        let Tl_Players = [];
+        let Mcg_Players = [];
+
+        const reScaleFactor = 2;
+        const mult = 0.0000125 * 1;
+        const tableHeight = 0.25 * 1;
+
+        let players = document.querySelectorAll("[gltf-model-plus][networked][id^=naf]");
+        if (players.length == 16 && players != undefined) {
+          players.forEach((player, i) => {
+            if (i < 4) {
+              Day_Players.push(player);
+            } else if (i > 3 && i < 8) {
+              Oath_Players.push(player);
+            } else if (i > 7 && i < 12) {
+              Tl_Players.push(player)
+            } else if (i > 11 && i < 16) {
+              Mcg_Players.push(player)
+            }
+          });
+        } else {
+          console.log('players is not 16');
+        }
+
+        document.body.addEventListener("keydown", function(event) {
+          //Press J for initial positions
+          if (event.keyCode == 74) {
+            console.log("initial player positioning");
+
+            function setInitialPos(item, pos3DObj) {
+              NAF.utils.getNetworkedEntity(item).then(networkedEl => {
+                NAF.utils.isMine(networkedEl);
+                NAF.utils.takeOwnership(networkedEl);
+                networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
+                networkedEl.object3D.rotation.set(0, 0, 0);
+                networkedEl.object3D.position.set(pos3DObj.x * mult, tableHeight + (pos3DObj.z * mult), pos3DObj.y * mult);
+              });
+            }
+
+            function setInitialScale(item) {
+              NAF.utils.getNetworkedEntity(item).then(networkedEl => {
+                NAF.utils.isMine(networkedEl);
+                NAF.utils.takeOwnership(networkedEl);
+                networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
+                networkedEl.object3D.scale.set(reScaleFactor, reScaleFactor, reScaleFactor);
+                // networkedEl.object3D.rotation.set(0, 0, 0);
+              })
+            }
+
+            Day_Players.forEach((item, i) => {
+              if (i == 0) {
+                setInitialPos(item, DAY_Flash[0].location);
+              } else if (i == 1) {
+                setInitialPos(item, DAY_Nourinz[0].location);
+              } else if (i == 2) {
+                setInitialPos(item, DAY_PuuChiwz[0].location);
+              } else if (i == 3) {
+                setInitialPos(item, DAY_vanOtica[0].location);
+              }
+              setInitialScale(item);
+            });
+
+            Oath_Players.forEach((item, i) => {
+              if (i == 0) {
+                setInitialPos(item, OATH_Relo[0].location);
+              } else if (i == 1) {
+                setInitialPos(item, OATH_PATKAPS[0].location);
+              } else if (i == 2) {
+                setInitialPos(item, OATH_Snakers[0].location);
+              } else if (i == 3) {
+                setInitialPos(item, OATH_Balefrost[0].location);
+              }
+              setInitialScale(item);
+            });
+
+            Tl_Players.forEach((item, i) => {
+              if (i == 0) {
+                setInitialPos(item, TL_clib[0].location);
+              } else if (i == 1) {
+                setInitialPos(item, TL_mxey[0].location);
+              } else if (i == 2) {
+                setInitialPos(item, TL_ibiza[0].location);
+              } else if (i == 3) {
+                setInitialPos(item, TL_jeemzz[0].location);
+              }
+              setInitialScale(item);
+            });
+
+            Mcg_Players.forEach((item, i) => {
+              if (i == 0) {
+                setInitialPos(item, MCG_Summer[0].location);
+              } else if (i == 1) {
+                setInitialPos(item, MCG_EviLLee[0].location);
+              } else if (i == 2) {
+                setInitialPos(item, MCG_995iTank[0].location);
+              } else if (i == 3) {
+                setInitialPos(item, MCG_LingDuuuuuu[0].location);
+              }
+              setInitialScale(item);
+            });
+          }
+        });
+
+        document.body.addEventListener("keydown", function(event) {
+          //Press H
+          if (event.keyCode == 72) {
+            console.log("initiate movement of players and start video");
+
+            let video = document.querySelectorAll("[networked][id^=naf][media-video]")[0];
+
+            if (video != undefined) {
+              NAF.utils.getNetworkedEntity(video).then(networkedEl => {
+                NAF.utils.isMine(networkedEl);
+                NAF.utils.takeOwnership(networkedEl);
+                networkedEl.components["media-video"].togglePlaying();
+                console.log('video should start');
+              });
+            } else {
+              console.log('video was undefined');
+            }
+
+            setTimeout(function() {
+              if (Day_Players, Oath_Players, Tl_Players, Mcg_Players) {
+                movePlayer(Day_Players[0], DAY_Flash);
+                movePlayer(Day_Players[1], DAY_Nourinz);
+                movePlayer(Day_Players[2], DAY_PuuChiwz);
+                movePlayer(Day_Players[3], DAY_vanOtica);
+                movePlayer(Oath_Players[0], OATH_Relo);
+                movePlayer(Oath_Players[1], OATH_PATKAPS);
+                movePlayer(Oath_Players[2], OATH_Snakers);
+                movePlayer(Oath_Players[3], OATH_Balefrost);
+                movePlayer(Tl_Players[0], TL_clib);
+                movePlayer(Tl_Players[1], TL_mxey);
+                movePlayer(Tl_Players[2], TL_ibiza);
+                movePlayer(Tl_Players[3], TL_jeemzz);
+                movePlayer(Mcg_Players[0], MCG_Summer);
+                movePlayer(Mcg_Players[1], MCG_EviLLee);
+                movePlayer(Mcg_Players[2], MCG_995iTank);
+                movePlayer(Mcg_Players[3], MCG_LingDuuuuuu);
+                console.log('players should start moving');
+              } else {
+                console.log('teams array is empty')
+              }
+            }, 32000); // 32 seconds into video players jump off the flight
+          }
+        });
+
+        function movePlayer(item, who) {
+          NAF.utils.getNetworkedEntity(item).then(networkedEl => {
+            NAF.utils.isMine(networkedEl);
+            NAF.utils.takeOwnership(networkedEl);
+            networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
+            let animation = AFRAME.ANIME.default.timeline({
+              targets: networkedEl.object3D.position,
+              autoPlay: false,
+              easing: "linear",
+              // duration: who[0].duration,
+            });
+            for (var i = 1; i < who.length; ++i) {
+
+              var xPos = who[i].location.x * mult;
+              var yPos = (who[i].location.z * mult) + tableHeight;
+              var zPos = who[i].location.y * mult;
+
+              //console.log(who[i - 1].duration);
+
+              if (who[i - 1].duration > 0) {
+                animation.add({
+                  duration: who[i - 1].duration, //randomIntFromInterval(10, 30) * 10,
+                  x: xPos,
+                  y: yPos,
+                  z: zPos,
+                  complete: function(anim) {
+                    //console.log('completed :' + i)
+                  }
+                })
+              }
+            }
+            animation.play();
+          });
+        }
+      }
+      /////END OF INJECTED CODE
+
+
       ///REMOVE ME BEFORE DEPLOY
       console.log(`Logged into account ${store.credentialsAccountId}`);
 
