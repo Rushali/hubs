@@ -1253,7 +1253,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         //const mult = 1500;
 
         // const reScaleFactor = .45;
-        const mult = 0.0000125 * 1;
+        const mult = 0.000012 * 1;
         const tableHeight = 0.25 * 1; 
 
         let players = document.querySelectorAll("[gltf-model-plus][networked][id^=naf]");
@@ -1291,7 +1291,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             NAF.utils.takeOwnership(networkedEl);
             networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
             networkedEl.object3D.scale.set(scaleF, scaleF, scaleF);
-            networkedEl.object3D.rotation.set(0, 0, 0);
           })
         }
 
