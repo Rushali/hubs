@@ -1346,7 +1346,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         let Mcg_Players = [];
 
         const reScaleFactor = 2;
-        const mult = 0.0000125 * 1;
+        const mult = 0.000012 * 1;
         const tableHeight = 0.25 * 1;
 
         let players = document.querySelectorAll("[gltf-model-plus][networked][id^=naf]");
