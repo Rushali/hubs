@@ -1372,8 +1372,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             NAF.utils.isMine(networkedEl);
             NAF.utils.takeOwnership(networkedEl);
             networkedEl.object3D.rotation.set(0, 0, 0);
-            networkedEl.object3D.scale.set(10, 10, 10);
-            networkedEl.object3D.position.set(6.2, 3.6, 0.03);
+            networkedEl.object3D.scale.set(9, 9, 9);
+            networkedEl.object3D.position.set(4, 3.6, -1);
           });
         } else {
           console.log('video is undefined');
