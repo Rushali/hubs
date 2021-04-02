@@ -1366,6 +1366,19 @@ document.addEventListener("DOMContentLoaded", async () => {
           console.log('players is not 16');
         }
 
+        let video = document.querySelectorAll("[networked][id^=naf][media-video]")[0];
+        if (video != undefined) {
+          NAF.utils.getNetworkedEntity(video).then(networkedEl => {
+            NAF.utils.isMine(networkedEl);
+            NAF.utils.takeOwnership(networkedEl);
+            networkedEl.object3D.rotation.set(0, 0, 0);
+            networkedEl.object3D.scale.set(10, 10, 10);
+            networkedEl.object3D.position.set(6.2, 3.6, 0.03);
+          });
+        } else {
+          console.log('video is undefined');
+        }
+
         document.body.addEventListener("keydown", function(event) {
           //Press J for initial positions
           if (event.keyCode == 74) {
@@ -1449,19 +1462,12 @@ document.addEventListener("DOMContentLoaded", async () => {
           //Press H
           if (event.keyCode == 72) {
             console.log("initiate movement of players and start video");
-
-            let video = document.querySelectorAll("[networked][id^=naf][media-video]")[0];
-
-            if (video != undefined) {
-              NAF.utils.getNetworkedEntity(video).then(networkedEl => {
-                NAF.utils.isMine(networkedEl);
-                NAF.utils.takeOwnership(networkedEl);
-                networkedEl.components["media-video"].togglePlaying();
-                console.log('video should start');
-              });
-            } else {
-              console.log('video was undefined');
-            }
+            NAF.utils.getNetworkedEntity(video).then(networkedEl => {
+              NAF.utils.isMine(networkedEl);
+              NAF.utils.takeOwnership(networkedEl);
+              networkedEl.components["media-video"].togglePlaying();
+              console.log('video should start');
+            });
 
             setTimeout(function() {
               if (Day_Players, Oath_Players, Tl_Players, Mcg_Players) {
