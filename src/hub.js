@@ -1364,7 +1364,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (players.length == 16 && players != undefined) {
           players.forEach((player, i) => {
 
-            for (var j=0; j<3; ==j){
+            for (var j=0; j<4; ++j){
               if(player.id == dayIds[j])
                 Day_Players.push(player);
               if(player.id == oathIds[j])
@@ -1392,7 +1392,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             networkedEl.object3D.scale.set(10, 10, 10);
             networkedEl.object3D.position.set(4.2, 3.6, 0.03); // moved two units based on new map size
 
-            
+
           });
         } else {
           console.log('video is undefined');
@@ -1401,7 +1401,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.body.addEventListener("keydown", function(event) {
           //Press J for initial positions
           if (event.keyCode == 74) {
-            console.log("initial player positioning");
+              setInitialState();
+          }
+        });
+
+        function setInitialState(){
+           console.log("initial player positioning");
 
             function setInitialPos(item, pos3DObj) {
               NAF.utils.getNetworkedEntity(item).then(networkedEl => {
@@ -1474,23 +1479,11 @@ document.addEventListener("DOMContentLoaded", async () => {
               }
               setInitialScale(item);
             });
-          }
-        });
+        }
 
-        document.body.addEventListener("keydown", function(event) {
-          //Press H
-          if (event.keyCode == 72) {
+         function startSimulation(){
 
-            function startSimulation(){
-
-                  console.log("initiate movement of players and start video");
-                  NAF.utils.getNetworkedEntity(video).then(networkedEl => {
-                    NAF.utils.isMine(networkedEl);
-                    NAF.utils.takeOwnership(networkedEl);
-                    networkedEl.components["media-video"].togglePlaying();
-                    console.log('video should start');
-                  });
-
+                  setInitialState();
                   
 
                   setTimeout(function() {
@@ -1517,20 +1510,34 @@ document.addEventListener("DOMContentLoaded", async () => {
                     }
                   }, 32000); // 32 seconds into video players jump off the flight
 
-                loopTimeOut = setTimeout(startSimulation, videoDuration * 1000);
+                  loopTimeOut = setTimeout(startSimulation, (videoDuration-32) * 1000);
 
                 } 
 
+        document.body.addEventListener("keydown", function(event) {
+          //Press H
+          if (event.keyCode == 72) {
                 startSimulation();
+
+                 console.log("initiate movement of players and start video");
+                  NAF.utils.getNetworkedEntity(video).then(networkedEl => {
+                    NAF.utils.isMine(networkedEl);
+                    NAF.utils.takeOwnership(networkedEl);
+                    networkedEl.components["media-video"].togglePlaying();
+                    console.log('video should start');
+                  });
 
           }
         });
+
+
 
         function movePlayer(item, who) {
           NAF.utils.getNetworkedEntity(item).then(networkedEl => {
             NAF.utils.isMine(networkedEl);
             NAF.utils.takeOwnership(networkedEl);
             networkedEl.components["set-unowned-body-kinematic"].setBodyKinematic();
+
             let animation = AFRAME.ANIME.default.timeline({
               targets: networkedEl.object3D.position,
               autoPlay: false,
@@ -1558,6 +1565,9 @@ document.addEventListener("DOMContentLoaded", async () => {
               }
             }
             animation.play();
+            animation.finished.then(function(){
+                networkedEl.object3D.scale.set(1, 0.001, 1);
+            });
           });
         }
       }
