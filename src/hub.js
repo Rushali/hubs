@@ -1345,22 +1345,38 @@ document.addEventListener("DOMContentLoaded", async () => {
         let Tl_Players = [];
         let Mcg_Players = [];
 
+        let dayIds = ["naf-4jcxj96", "naf-s72asdr", "naf-ae5nedj", "naf-ha42t3x"]; //RED
+        let mcgIds = ["naf-b9hxa4y", "naf-dy5v9v8", "naf-sqzh4uo", "naf-qhkwri7"]; //PURPLE
+        let oathIds = ["naf-z9l4tbo", "naf-4a19h0t", "naf-zpoj3ev", "naf-lmnr9xq"]//GREEN 
+        let tlIds = ["naf-fb9hb51", "naf-3ihqjfh", "naf-ij2lxpe", "naf-z1yzplz"]//CYAN
+
+        const videoDuration = 691; //seconds to milis 
+
         const reScaleFactor = 2;
-        const mult = 0.000012 * 1;
-        const tableHeight = 0.25 * 1;
+        const mult = 0.00001 * 1;
+        const tableHeight = 0.1 * 1;
+
+        let loopTimeOut;
+
+       
 
         let players = document.querySelectorAll("[gltf-model-plus][networked][id^=naf]");
         if (players.length == 16 && players != undefined) {
           players.forEach((player, i) => {
-            if (i < 4) {
-              Day_Players.push(player);
-            } else if (i > 3 && i < 8) {
-              Oath_Players.push(player);
-            } else if (i > 7 && i < 12) {
-              Tl_Players.push(player)
-            } else if (i > 11 && i < 16) {
-              Mcg_Players.push(player)
+
+            for (var j=0; j<3; ==j){
+              if(player.id == dayIds[j])
+                Day_Players.push(player);
+              if(player.id == oathIds[j])
+                 Oath_Players.push(player);
+              if(player.id == tlIds[j])
+                 Tl_Players.push(player)
+              if(player.id == mcgIds[j])
+                Mcg_Players.push(player)
+
             }
+            
+
           });
         } else {
           console.log('players is not 16');
@@ -1372,8 +1388,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             NAF.utils.isMine(networkedEl);
             NAF.utils.takeOwnership(networkedEl);
             networkedEl.object3D.rotation.set(0, 0, 0);
-            networkedEl.object3D.scale.set(9, 9, 9);
-            networkedEl.object3D.position.set(4, 3.6, -1);
+
+            networkedEl.object3D.scale.set(10, 10, 10);
+            networkedEl.object3D.position.set(4.2, 3.6, 0.03); // moved two units based on new map size
+
+            
           });
         } else {
           console.log('video is undefined');
@@ -1461,37 +1480,49 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.body.addEventListener("keydown", function(event) {
           //Press H
           if (event.keyCode == 72) {
-            console.log("initiate movement of players and start video");
-            NAF.utils.getNetworkedEntity(video).then(networkedEl => {
-              NAF.utils.isMine(networkedEl);
-              NAF.utils.takeOwnership(networkedEl);
-              networkedEl.components["media-video"].togglePlaying();
-              console.log('video should start');
-            });
 
-            setTimeout(function() {
-              if (Day_Players, Oath_Players, Tl_Players, Mcg_Players) {
-                movePlayer(Day_Players[0], DAY_Flash);
-                movePlayer(Day_Players[1], DAY_Nourinz);
-                movePlayer(Day_Players[2], DAY_PuuChiwz);
-                movePlayer(Day_Players[3], DAY_vanOtica);
-                movePlayer(Oath_Players[0], OATH_Relo);
-                movePlayer(Oath_Players[1], OATH_PATKAPS);
-                movePlayer(Oath_Players[2], OATH_Snakers);
-                movePlayer(Oath_Players[3], OATH_Balefrost);
-                movePlayer(Tl_Players[0], TL_clib);
-                movePlayer(Tl_Players[1], TL_mxey);
-                movePlayer(Tl_Players[2], TL_ibiza);
-                movePlayer(Tl_Players[3], TL_jeemzz);
-                movePlayer(Mcg_Players[0], MCG_Summer);
-                movePlayer(Mcg_Players[1], MCG_EviLLee);
-                movePlayer(Mcg_Players[2], MCG_995iTank);
-                movePlayer(Mcg_Players[3], MCG_LingDuuuuuu);
-                console.log('players should start moving');
-              } else {
-                console.log('teams array is empty')
-              }
-            }, 32000); // 32 seconds into video players jump off the flight
+            function startSimulation(){
+
+                  console.log("initiate movement of players and start video");
+                  NAF.utils.getNetworkedEntity(video).then(networkedEl => {
+                    NAF.utils.isMine(networkedEl);
+                    NAF.utils.takeOwnership(networkedEl);
+                    networkedEl.components["media-video"].togglePlaying();
+                    console.log('video should start');
+                  });
+
+                  
+
+                  setTimeout(function() {
+                    if (Day_Players, Oath_Players, Tl_Players, Mcg_Players) {
+                      movePlayer(Day_Players[0], DAY_Flash);
+                      movePlayer(Day_Players[1], DAY_Nourinz);
+                      movePlayer(Day_Players[2], DAY_PuuChiwz);
+                      movePlayer(Day_Players[3], DAY_vanOtica);
+                      movePlayer(Oath_Players[0], OATH_Relo);
+                      movePlayer(Oath_Players[1], OATH_PATKAPS);
+                      movePlayer(Oath_Players[2], OATH_Snakers);
+                      movePlayer(Oath_Players[3], OATH_Balefrost);
+                      movePlayer(Tl_Players[0], TL_clib);
+                      movePlayer(Tl_Players[1], TL_mxey);
+                      movePlayer(Tl_Players[2], TL_ibiza);
+                      movePlayer(Tl_Players[3], TL_jeemzz);
+                      movePlayer(Mcg_Players[0], MCG_Summer);
+                      movePlayer(Mcg_Players[1], MCG_EviLLee);
+                      movePlayer(Mcg_Players[2], MCG_995iTank);
+                      movePlayer(Mcg_Players[3], MCG_LingDuuuuuu);
+                      console.log('players should start moving');
+                    } else {
+                      console.log('teams array is empty')
+                    }
+                  }, 32000); // 32 seconds into video players jump off the flight
+
+                loopTimeOut = setTimeout(startSimulation, videoDuration * 1000);
+
+                } 
+
+                startSimulation();
+
           }
         });
 
