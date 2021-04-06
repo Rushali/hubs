@@ -1566,7 +1566,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
             animation.play();
             animation.finished.then(function(){
-                networkedEl.object3D.scale.set(1, 0.001, 1);
+              console.log("affecting-->" + networkedEl.id);
+               // networkedEl.object3D.scale.set(1, 0.001, 1);
             });
           });
         }
