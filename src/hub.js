@@ -1350,6 +1350,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         let oathIds = ["naf-z9l4tbo", "naf-4a19h0t", "naf-zpoj3ev", "naf-lmnr9xq"]//GREEN 
         let tlIds = ["naf-fb9hb51", "naf-3ihqjfh", "naf-ij2lxpe", "naf-z1yzplz"]//CYAN
 
+
+
+        let dayIds_local = ["naf-xysy1ql", "naf-83lkwq9", "naf-eacmc2u", "naf-5g9i46a"] 
+        let mcgIds_local = ["naf-wbz1dbp","naf-yn13a5p","naf-nr30axf","naf-y0erfj9"] 
+        let oathIds_local = ["naf-79bdqr4", "naf-g2dc4dp", "naf-q5idq5j", "naf-2u3brtn"] 
+        let tlIds_local = ["naf-hhtfxr2", "naf-c12ikop", "naf-y5i1nr9", "naf-3avv0y7"]
+
         const videoDuration = 691; //seconds to milis 
 
         const reScaleFactor = 2;
@@ -1361,18 +1368,25 @@ document.addEventListener("DOMContentLoaded", async () => {
        
 
         let players = document.querySelectorAll("[gltf-model-plus][networked][id^=naf]");
+
         if (players.length == 16 && players != undefined) {
+
           players.forEach((player, i) => {
 
             for (var j=0; j<4; ++j){
+
               if(player.id == dayIds[j])
                 Day_Players.push(player);
+
               if(player.id == oathIds[j])
                  Oath_Players.push(player);
+
               if(player.id == tlIds[j])
                  Tl_Players.push(player)
+
               if(player.id == mcgIds[j])
                 Mcg_Players.push(player)
+
 
             }
             
@@ -1508,9 +1522,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                     } else {
                       console.log('teams array is empty')
                     }
-                  }, 32000); // 32 seconds into video players jump off the flight
+                  }, 32 * 1000); // 32 seconds into video players jump off the flight
 
-                  loopTimeOut = setTimeout(startSimulation, (videoDuration-32) * 1000);
+                  loopTimeOut = setTimeout(startSimulation, (videoDuration) * 1000);
 
                 } 
 
@@ -1542,35 +1556,38 @@ document.addEventListener("DOMContentLoaded", async () => {
               targets: networkedEl.object3D.position,
               autoPlay: false,
               easing: "linear",
+               update: function(anim) {
+                    if( Math.round(anim.progress) == 100){
+                        console.log("animation ended for " + networkedEl.id)
+                        networkedEl.object3D.scale.set(0.1, 0.1, 0.1);
+                       
+                    }
+                }
               // duration: who[0].duration,
             });
-            for (var i = 1; i < who.length; ++i) {
-
-              var xPos = who[i].location.x * mult;
-              var yPos = (who[i].location.z * mult) + tableHeight;
-              var zPos = who[i].location.y * mult;
-
-              //console.log(who[i - 1].duration);
-
-              if (who[i - 1].duration > 0) {
-                animation.add({
-                  duration: who[i - 1].duration, //randomIntFromInterval(10, 30) * 10,
-                  x: xPos,
-                  y: yPos,
-                  z: zPos,
-                  complete: function(anim) {
-                    if(i == who.length -1 ){
-                        networkedEl.object3D.scale.set(0, 0, 0);
-                       console.log( JSON.stringify(anim) );
-                    }
-                  }
-
-                })
-              }
-            }
-            animation.play();
+            //
             
+            let new_who = who.filter(step => step.duration > 0)
 
+            for (var i = 1; i < new_who.length; ++i) {
+                  var xPos = new_who[i].location.x * mult;
+                  var yPos = (new_who[i].location.z * mult) + tableHeight;
+                  var zPos = new_who[i].location.y * mult;
+                 
+                  animation.add({
+                            duration: new_who[i - 1].duration * .125, //randomIntFromInterval(10, 30) * 10,
+                            x: xPos,
+                            y: yPos,
+                            z: zPos,
+                            complete: function(anim) {
+                                //set scale here with the right i 
+                                //console.log("current i value :" + i);
+                            }
+                          })
+                          // }
+            }
+            //
+            animation.play();
           });
         }
       }
