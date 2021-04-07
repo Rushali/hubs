@@ -1559,16 +1559,17 @@ document.addEventListener("DOMContentLoaded", async () => {
                   y: yPos,
                   z: zPos,
                   complete: function(anim) {
-                    //console.log('completed :' + i)
+                    if(i == who.length){
+                        networkedEl.object3D.scale.set(0, 0, 0);
+                        console.log('completed last call for ID:' + networkedEl.id);
+                      }
                   }
                 })
               }
             }
             animation.play();
-            animation.finished.then(function(){
-              console.log("affecting-->" + networkedEl.id);
-               // networkedEl.object3D.scale.set(1, 0.001, 1);
-            });
+            
+
           });
         }
       }
