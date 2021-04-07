@@ -1559,11 +1559,12 @@ document.addEventListener("DOMContentLoaded", async () => {
                   y: yPos,
                   z: zPos,
                   complete: function(anim) {
-                    if(i == who.length){
+                    if(i == who.length -1 ){
                         networkedEl.object3D.scale.set(0, 0, 0);
-                        console.log('completed last call for ID:' + networkedEl.id);
-                      }
+                       console.log( JSON.stringify(anim) );
+                    }
                   }
+
                 })
               }
             }
