@@ -1575,7 +1575,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                   var zPos = new_who[i].location.y * mult;
                  
                   animation.add({
-                            duration: new_who[i - 1].duration * .125, //randomIntFromInterval(10, 30) * 10,
+                            duration: new_who[i - 1].duration * 1, //randomIntFromInterval(10, 30) * 10,
                             x: xPos,
                             y: yPos,
                             z: zPos,
